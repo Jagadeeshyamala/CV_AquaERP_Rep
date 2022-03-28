@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "5c93fc26-1c0f-48cb-9840-88ef1bbbf649": {
+      "ProjectGuid": "5c93fc26-1c0f-48cb-9840-88ef1bbbf649",
+      "DisplayName": "AquaERP.API",
+      "ColorIndex": 0
+    },
+    "16838ea3-3fae-4e39-8d4d-b70de21b945b": {
+      "ProjectGuid": "16838ea3-3fae-4e39-8d4d-b70de21b945b",
+      "DisplayName": "AquaERP.Model",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
