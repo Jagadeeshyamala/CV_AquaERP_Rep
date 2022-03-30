@@ -5766,11 +5766,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jagad\\Documents\\GitHub\\CVAquaERPM\\AquaERP.API\\AquaERP.Model\\AquaERP.Model.csproj",
+      "projectUniqueName": "C:\\Users\\jagad\\Documents\\GitHub\\CV_AquaERP_repo\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.Model\\AquaERP.Model.csproj",
       "projectName": "AquaERP.Model",
-      "projectPath": "C:\\Users\\jagad\\Documents\\GitHub\\CVAquaERPM\\AquaERP.API\\AquaERP.Model\\AquaERP.Model.csproj",
+      "projectPath": "C:\\Users\\jagad\\Documents\\GitHub\\CV_AquaERP_repo\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.Model\\AquaERP.Model.csproj",
       "packagesPath": "C:\\Users\\jagad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jagad\\Documents\\GitHub\\CVAquaERPM\\AquaERP.API\\AquaERP.Model\\obj\\",
+      "outputPath": "C:\\Users\\jagad\\Documents\\GitHub\\CV_AquaERP_repo\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.Model\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jagad\\AppData\\Roaming\\NuGet\\NuGet.Config",

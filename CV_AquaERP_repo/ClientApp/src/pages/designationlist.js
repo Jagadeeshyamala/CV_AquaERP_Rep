@@ -3,6 +3,10 @@ import * as ReactDOM from "react-dom";
 import { Grid, GridColumn as Column } from "@progress/kendo-react-grid";
 
 import AddDesignation from "./adddesignation";
+
+import {GetHrDepartmentMaster} from '../actions/DepartmentMaster';
+import { connect } from "react-redux";
+
 const CommandCell = props => {
   return <td>
         <button className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-primary" onClick={() => props.enterEdit(props.dataItem)}>
@@ -20,24 +24,23 @@ const Designation = () => {
     id: ""
   });
   const [data, setData] = React.useState([]);
+
+
   useEffect(() => {
-    console.log('it is at loading---');//updateLoading(false)
     async function PopulateDeptData() {
         const reponse = await fetch('http://localhost:35700/api/HrDepartmentMaster/GetHrDepartmentMaster')
         
         .then(response => response.json())
         .then(result => { 
-            debugger
             setData(result); 
-            //updateresult(process(result, dataState)) 
         })
-        //const data = await reponse.json();
-        //updateDepts(data)
-        //updateLoading(false)
-        //console.log('it is at loading---' + data);
+     
     }
     PopulateDeptData();
 }, [])
+
+
+
 const handleCreate= item => {
     setOpenForm(true);
     setEditItem([]);

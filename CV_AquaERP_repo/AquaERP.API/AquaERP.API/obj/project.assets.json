@@ -7504,11 +7504,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jagad\\Documents\\GitHub\\CVAquaERPM\\AquaERP.API\\AquaERP.API\\AquaERP.API.csproj",
+      "projectUniqueName": "C:\\Users\\jagad\\Documents\\GitHub\\CV_AquaERP_repo\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.API\\AquaERP.API.csproj",
       "projectName": "AquaERP.API",
-      "projectPath": "C:\\Users\\jagad\\Documents\\GitHub\\CVAquaERPM\\AquaERP.API\\AquaERP.API\\AquaERP.API.csproj",
+      "projectPath": "C:\\Users\\jagad\\Documents\\GitHub\\CV_AquaERP_repo\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.API\\AquaERP.API.csproj",
       "packagesPath": "C:\\Users\\jagad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jagad\\Documents\\GitHub\\CVAquaERPM\\AquaERP.API\\AquaERP.API\\obj\\",
+      "outputPath": "C:\\Users\\jagad\\Documents\\GitHub\\CV_AquaERP_repo\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jagad\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7525,8 +7525,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\jagad\\Documents\\GitHub\\CVAquaERPM\\AquaERP.API\\AquaERP.Model\\AquaERP.Model.csproj": {
-              "projectPath": "C:\\Users\\jagad\\Documents\\GitHub\\CVAquaERPM\\AquaERP.API\\AquaERP.Model\\AquaERP.Model.csproj"
+            "C:\\Users\\jagad\\Documents\\GitHub\\CV_AquaERP_repo\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.Model\\AquaERP.Model.csproj": {
+              "projectPath": "C:\\Users\\jagad\\Documents\\GitHub\\CV_AquaERP_repo\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.Model\\AquaERP.Model.csproj"
             }
           }
         }

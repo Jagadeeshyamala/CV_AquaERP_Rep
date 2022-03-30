@@ -10,6 +10,7 @@ import AddRole from './pages/addrole.js';
 import AddDepartment from './pages/adddepartment';
 import HrDepartment from './pages/departmentList';
 import HrDesignation from './pages/designationlist';
+import DepartmentMasterList from './components/department-master.component';
 import DrawerRouterContainer from './components/DrawerRouterContainer.jsx';
 import { AppContext } from './AppContext';
 import { countries } from './resources/countries';
@@ -38,7 +39,6 @@ import { enMessages } from './messages/en-US';
 import { frMessages } from './messages/fr';
 import { esMessages } from './messages/es';
 
-import 'hammerjs';
  import '@progress/kendo-theme-default/dist/all.css';
 
 //import "~@progress/kendo-theme-bootstrap/dist/all.css";
@@ -97,18 +97,18 @@ const App = () => {
                 <IntlProvider locale={contextState.localeId}>
                     <AppContext.Provider value={{...contextState, onLanguageChange, onProfileChange}}>
                         <HashRouter>
-                            <DrawerRouterContainer>
-                                <Switch>
+                             <DrawerRouterContainer>
+                                <Switch> 
                                     <Route exact={true} path="/" component={Dashboard} />
                                     <Route exact={true} path="/addrole" component={AddRole} />
                                     <Route exact={true} path="/planning" component={Planning} />
-                                    {/*<Route exact={true} path="/profile" component={Profile} />*/}
+                                    <Route exact={true} path="/profile" component={Profile} />
                                     <Route exact={true} path="/info" component={Info} />
                                     <Route exact={true} path="/sarole" component={SARoles} />
                                     <Route exact={true} path="/adddepartment" component={AddDepartment} />
                                     <Route exact={true} path="/departmentlist" component={HrDepartment} />
                                     <Route exact={true} path='/adddepartment/:id' component={AddDepartment} />
-                                    <Route exact={true} path='/desinationlist' component={HrDesignation} />
+                                    <Route exact={true} path='/desinationlist' component={DepartmentMasterList} />
                                 </Switch>
                             </DrawerRouterContainer>
                         </HashRouter>

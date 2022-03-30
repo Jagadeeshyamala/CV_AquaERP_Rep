@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gYIwZbf/mFNSEmwejJ2Zl3+NkO+zeWXFVK60QwdD7jyAu9G7Mlhe7dBPRjOvDlW8ANLU6mox233prB6Tf2b4vA==",
+  "dgSpecHash": "Bzhpcm9MSaGoIY8c1lJhQB0LXLDyh8L0xDLfL3vutR8X6/CYfme1Zp3exl1hHojB2Mm0QjQxCHEb/NUB5S1J+Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jagad\\Documents\\GitHub\\CVAquaERPM\\AquaERP.API\\AquaERP.API\\AquaERP.API.csproj",
+  "projectFilePath": "C:\\Users\\jagad\\Documents\\GitHub\\CV_AquaERP_repo\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.API\\AquaERP.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jagad\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\jagad\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.2.7\\microsoft.aspnet.webapi.core.5.2.7.nupkg.sha512",

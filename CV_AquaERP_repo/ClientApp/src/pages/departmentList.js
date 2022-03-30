@@ -142,13 +142,14 @@ export default function HrDepartment(props) {
                 debugger
                 updateDepts(result); 
                 updateresult(process(result, dataState)) })
-            //const data = await reponse.json();
-            //updateDepts(data)
             updateLoading(false)
             //console.log('it is at loading---' + data);
         }
         PopulateDeptData();
     }, [])
+
+
+
     const rendata = () => {
         let contents = Loading
             ? <p><em>Loading...</em></p>
