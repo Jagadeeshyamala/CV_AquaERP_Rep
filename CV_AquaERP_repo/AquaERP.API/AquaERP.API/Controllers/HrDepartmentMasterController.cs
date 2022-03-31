@@ -36,5 +36,68 @@ namespace AquaERP.API.Controllers
             }
             return lstHrDepartmentMaster;
         }
+
+        [HttpPost]
+        [Route("InsertHrContractorDetails")]
+        public HrDepartmentMaster InsertHrContractorDetails(HrDepartmentMaster input)
+        {
+            try
+            {
+                var response = objDepartmentMaster.InsertHrDepartmentMaster(input);
+                return response;
+            }
+            catch (System.ApplicationException)
+            {
+
+                throw;
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+
+        }
+        [HttpPut]
+        [Route("UpdateHrContractorDetails")]
+        public HrDepartmentMaster UpdateHrContractorDetails(HrDepartmentMaster input)
+        {
+            try
+            {
+                var response = objDepartmentMaster.InsertHrDepartmentMaster(input);
+                return response;
+            }
+            catch (System.ApplicationException)
+            {
+
+                throw;
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        [HttpDelete]
+        [Route("DeleteHrContractorDetails")]
+        public void DeleteHrContractorDetails(int id)
+        {
+            try
+            {
+                objDepartmentMaster.DeleteHrDepartmentMaster(id);
+            }
+            catch (System.ApplicationException)
+            {
+
+                throw;
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

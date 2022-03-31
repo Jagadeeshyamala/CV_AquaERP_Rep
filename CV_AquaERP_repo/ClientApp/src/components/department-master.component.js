@@ -7,10 +7,16 @@ import { Popup } from "@progress/kendo-react-popup";
 import AddDesignation from "../pages/adddesignation";
 import { connect } from "react-redux";
 
+const mapStateToProps = (state) => {
+    return{
+        departmets :state.departmets
+    };
+};
+
 class DepartmentMasterList extends Component{
     constructor(props){
         super(props);
-        this.state = {}
+      
     }
 
     componentDidMount()
@@ -22,7 +28,7 @@ class DepartmentMasterList extends Component{
     render()
     {
        
-        const{GetHrDepartmentMaster}=this.props;
+        const{departmets}=this.props;
         return <React.Fragment>
         <div id="adddepartment" className="profile-page main-content">
             <div className="card-container">
@@ -32,7 +38,7 @@ class DepartmentMasterList extends Component{
           </button> */}
                     <Grid style={{
                         height: "400px"
-                    }} data={GetHrDepartmentMaster}>
+                    }} data={departmets}>
                         <div style={{ display: 'none' }} >
   
                             <Column field="id" title="ID" filterable={false} />
@@ -54,11 +60,7 @@ class DepartmentMasterList extends Component{
             </React.Fragment>;
   };
     }
-const mapStateToProps = (state) => {
-    return{
-        GetHrDepartmentMaster :state.GetHrDepartmentMaster
-    };
-};
+
 export default connect(mapStateToProps,{GetHrDepartmentMaster})(DepartmentMasterList)
 
 
