@@ -13,5 +13,3 @@ composeWithDevTools(applyMiddleware(...middleware))
 );
 
 export default store;
-
-// I am using mobile data now because power cut and when you call then disconect  ok
