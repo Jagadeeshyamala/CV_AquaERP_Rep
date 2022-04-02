@@ -36,13 +36,19 @@ class DepartmentMasterList extends React.Component {
                 DeptCode: "",
                 DeptDetails: "",
                 ParentId: "",
+                ParentName:""
             },
-            depts: []
+            depts: [],
+            departmets:[]
 
         };
     }
 
     componentDidMount() {
+       this.bindData(); 
+    }
+
+    bindData(){
         this.props.GetHrDepartmentMaster();
     }
 
@@ -83,7 +89,7 @@ class DepartmentMasterList extends React.Component {
             var input = {
                 DeptCode: item.deptCode,
                 DeptDetails: item.deptDetails,
-                ParentId: item.parentId.parentId
+                ParentId:!!item.parentId ? item.parentId.parentId : null
             }
             this.props.CreateHrDepartmentMaster(input).then((data) => {
                 alert("Department has been added successfully.");
@@ -116,6 +122,7 @@ class DepartmentMasterList extends React.Component {
 
 
         }
+        this.bindData();
     }
 
     MyEditCommandCell = (props) => (
@@ -142,7 +149,6 @@ class DepartmentMasterList extends React.Component {
                             </div>
                             <Column field="deptCode" title="Dept Code" width="250px" />
                             <Column field="deptDetails" title="Dept Details" width="350px" />
-                            {/* <Column field="parentId" title="Parent ID" width="250px" /> */}
                             <Column field="parentName" title="Parent Name" width="250px" />
                             <Column field="createdDate"
                                 title="Created Date"
