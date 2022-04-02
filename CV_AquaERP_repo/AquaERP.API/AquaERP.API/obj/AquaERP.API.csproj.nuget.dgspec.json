@@ -1,37 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ConcoVision\\CV_AquaERP_Rep\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.API\\AquaERP.API.csproj": {}
+    "C:\\Users\\jagad\\Documents\\GitHub\\CV_AquaERP_repo\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.API\\AquaERP.API.csproj": {}
   },
   "projects": {
-    "C:\\ConcoVision\\CV_AquaERP_Rep\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.API\\AquaERP.API.csproj": {
+    "C:\\Users\\jagad\\Documents\\GitHub\\CV_AquaERP_repo\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.API\\AquaERP.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ConcoVision\\CV_AquaERP_Rep\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.API\\AquaERP.API.csproj",
+        "projectUniqueName": "C:\\Users\\jagad\\Documents\\GitHub\\CV_AquaERP_repo\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.API\\AquaERP.API.csproj",
         "projectName": "AquaERP.API",
-        "projectPath": "C:\\ConcoVision\\CV_AquaERP_Rep\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.API\\AquaERP.API.csproj",
-        "packagesPath": "C:\\Users\\New-PC\\.nuget\\packages\\",
-        "outputPath": "C:\\ConcoVision\\CV_AquaERP_Rep\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.API\\obj\\",
+        "projectPath": "C:\\Users\\jagad\\Documents\\GitHub\\CV_AquaERP_repo\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.API\\AquaERP.API.csproj",
+        "packagesPath": "C:\\Users\\jagad\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jagad\\Documents\\GitHub\\CV_AquaERP_repo\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.API\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\New-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jagad\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\ConcoVision\\CV_AquaERP_Rep\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.Model\\AquaERP.Model.csproj": {
-                "projectPath": "C:\\ConcoVision\\CV_AquaERP_Rep\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.Model\\AquaERP.Model.csproj"
+              "C:\\Users\\jagad\\Documents\\GitHub\\CV_AquaERP_repo\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.Model\\AquaERP.Model.csproj": {
+                "projectPath": "C:\\Users\\jagad\\Documents\\GitHub\\CV_AquaERP_repo\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.Model\\AquaERP.Model.csproj"
               }
             }
           }
@@ -81,30 +79,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\ConcoVision\\CV_AquaERP_Rep\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.Model\\AquaERP.Model.csproj": {
+    "C:\\Users\\jagad\\Documents\\GitHub\\CV_AquaERP_repo\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.Model\\AquaERP.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ConcoVision\\CV_AquaERP_Rep\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.Model\\AquaERP.Model.csproj",
+        "projectUniqueName": "C:\\Users\\jagad\\Documents\\GitHub\\CV_AquaERP_repo\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.Model\\AquaERP.Model.csproj",
         "projectName": "AquaERP.Model",
-        "projectPath": "C:\\ConcoVision\\CV_AquaERP_Rep\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.Model\\AquaERP.Model.csproj",
-        "packagesPath": "C:\\Users\\New-PC\\.nuget\\packages\\",
-        "outputPath": "C:\\ConcoVision\\CV_AquaERP_Rep\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.Model\\obj\\",
+        "projectPath": "C:\\Users\\jagad\\Documents\\GitHub\\CV_AquaERP_repo\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.Model\\AquaERP.Model.csproj",
+        "packagesPath": "C:\\Users\\jagad\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jagad\\Documents\\GitHub\\CV_AquaERP_repo\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.Model\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\New-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jagad\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -149,7 +145,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
