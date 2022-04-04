@@ -6,7 +6,7 @@ namespace AquaERP.API.AquaERP.Services.AquaInterface
 {
     public interface IHrDepartmentMasterBusiness
     {
-        IEnumerable<HrDepartmentMaster> GetHrDepartmentMaster();
+        IEnumerable<DepartmentMasterView> GetHrDepartmentMaster();
         void InsertHrDepartmentMaster(DepartmentMaster input);
         void UpdateHrDepartmentMaster(System.Guid id, DepartmentMaster input);
         void DeleteHrDepartmentMaster(System.Guid id);

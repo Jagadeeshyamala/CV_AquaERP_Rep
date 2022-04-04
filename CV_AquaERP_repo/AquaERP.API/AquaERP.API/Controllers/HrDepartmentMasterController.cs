@@ -17,9 +17,9 @@ namespace AquaERP.API.Controllers
 
         [HttpGet]
         [Route("GetHrDepartmentMaster")]
-        public IEnumerable<HrDepartmentMaster> GetHrContractorDetails()
+        public IEnumerable<DepartmentMasterView> GetHrContractorDetails()
         {
-            IEnumerable<HrDepartmentMaster> lstHrDepartmentMaster = new List<HrDepartmentMaster>();
+            IEnumerable<DepartmentMasterView> lstHrDepartmentMaster = new List<DepartmentMasterView>();
 
             try
             {

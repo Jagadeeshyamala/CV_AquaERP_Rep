@@ -24,9 +24,20 @@ namespace AquaERP.API.AquaERP.Services.AquaBusiness
             unitOfWork.Save();
         }
 
-        public IEnumerable<HrDepartmentMaster> GetHrDepartmentMaster()
+        public IEnumerable<DepartmentMasterView> GetHrDepartmentMaster()
         {
-            return unitOfWork.HrDepartmentMasterRepository.GetAll().Where(a=>a.IsDeleted == false).ToList();
+            IEnumerable<DepartmentMasterView> departmentMasterViews = new List<DepartmentMasterView>();
+
+            departmentMasterViews = unitOfWork.HrDepartmentMasterRepository.GetAll().Where(a => a.IsDeleted == false)
+                .Select(d => new DepartmentMasterView {
+                    Id = d.Id,
+                    DeptCode=d.DeptCode,
+                    DeptDetails=d.DeptDetails,
+                    CreatedDate=d.CreatedDate,
+                    ParentName= unitOfWork.HrDepartmentMasterRepository.GetAll().Where(p=>p.Id == d.ParentId).Select(q=>q.DeptDetails).FirstOrDefault()
+                }).ToList();
+
+            return departmentMasterViews;
         }
 
         public void InsertHrDepartmentMaster(DepartmentMaster input)
