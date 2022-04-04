@@ -1,5 +1,6 @@
 ﻿using AquaERP.API.AquaERP.Services.AquaBusiness;
 using AquaERP.API.AquaERP.Services.AquaInterface;
+using AquaERP.API.DTOs;
 using AquaERP.Model.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -38,13 +39,12 @@ namespace AquaERP.API.Controllers
         }
 
         [HttpPost]
-        [Route("InsertHrContractorDetails")]
-        public HrDepartmentMaster InsertHrContractorDetails(HrDepartmentMaster input)
+        [Route("InsertHrDepartmentMaster")]
+        public void InsertHrDepartmentMaster(DepartmentMaster data)
         {
             try
             {
-                var response = objDepartmentMaster.InsertHrDepartmentMaster(input);
-                return response;
+                objDepartmentMaster.InsertHrDepartmentMaster(data);
             }
             catch (System.ApplicationException)
             {
@@ -59,13 +59,12 @@ namespace AquaERP.API.Controllers
 
         }
         [HttpPut]
-        [Route("UpdateHrContractorDetails")]
-        public HrDepartmentMaster UpdateHrContractorDetails(HrDepartmentMaster input)
+        [Route("UpdateHrDepartmentMaster/{id}")]
+        public void UpdateHrDepartmentMaster(System.Guid id, DepartmentMaster data)
         {
             try
             {
-                var response = objDepartmentMaster.InsertHrDepartmentMaster(input);
-                return response;
+                objDepartmentMaster.UpdateHrDepartmentMaster(id, data);
             }
             catch (System.ApplicationException)
             {
@@ -81,8 +80,8 @@ namespace AquaERP.API.Controllers
         }
 
         [HttpDelete]
-        [Route("DeleteHrContractorDetails")]
-        public void DeleteHrContractorDetails(int id)
+        [Route("DeleteHrContractorDetails/{id}")]
+        public void DeleteHrContractorDetails(System.Guid id)
         {
             try
             {

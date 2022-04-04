@@ -7,10 +7,9 @@ import Profile from './pages/Profile.jsx';
 import Info from './pages/Info.jsx';
 import SARoles from './pages/SARoles.js';
 import AddRole from './pages/addrole.js';
-import AddDepartment from './pages/adddepartment';
 import HrDepartment from './pages/departmentList';
-import HrDesignation from './pages/designationlist';
-import DepartmentMasterList from './components/department-master.component';
+import AddDepartment from './components/department/add-department-master.component';
+import DepartmentMasterList from './components/department/department-master.component';
 import DrawerRouterContainer from './components/DrawerRouterContainer.jsx';
 import { AppContext } from './AppContext';
 import { countries } from './resources/countries';
@@ -107,7 +106,7 @@ const App = () => {
                                     <Route exact={true} path="/sarole" component={SARoles} />
                                     <Route exact={true} path="/adddepartment" component={AddDepartment} />
                                     <Route exact={true} path="/departmentlist" component={HrDepartment} />
-                                    <Route exact={true} path='/adddepartment/:id' component={AddDepartment} />
+                                    {/* <Route exact={true} path='/adddepartment/:id' component={AddDepartment} /> */}
                                     <Route exact={true} path='/desinationlist' component={DepartmentMasterList} />
                                 </Switch>
                             </DrawerRouterContainer>

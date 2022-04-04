@@ -1,11 +1,10 @@
 import {
-    GET_DATA
+    GET_DATA,CREATE_DATA,UPDATE_DATA,DELETE_DATA
 } from "../actions/types";
 
 const initialState = [];
 
 function DepartmentMasterReducer(departmets = initialState, action) {
-    debugger;
     const { type, payload } = action;
 
     switch (type) {
