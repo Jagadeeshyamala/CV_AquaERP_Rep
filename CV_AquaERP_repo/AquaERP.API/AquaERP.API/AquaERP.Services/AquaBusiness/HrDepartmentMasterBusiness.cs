@@ -26,16 +26,21 @@ namespace AquaERP.API.AquaERP.Services.AquaBusiness
 
         public IEnumerable<DepartmentMasterView> GetHrDepartmentMaster()
         {
-            IEnumerable<DepartmentMasterView> departmentMasterViews = new List<DepartmentMasterView>();
+            IEnumerable<HrDepartmentMaster> departmentMaster= new List<HrDepartmentMaster>();
+            List<DepartmentMasterView> departmentMasterViews = new List<DepartmentMasterView>();
 
-            departmentMasterViews = unitOfWork.HrDepartmentMasterRepository.GetAll().Where(a => a.IsDeleted == false)
-                .Select(d => new DepartmentMasterView {
-                    Id = d.Id,
-                    DeptCode=d.DeptCode,
-                    DeptDetails=d.DeptDetails,
-                    CreatedDate=d.CreatedDate,
-                    ParentName= unitOfWork.HrDepartmentMasterRepository.GetAll().Where(p=>p.Id == d.ParentId).Select(q=>q.DeptDetails).FirstOrDefault()
-                }).ToList();
+            departmentMaster = unitOfWork.HrDepartmentMasterRepository.GetAll().Where(a => a.IsDeleted == false).ToList();
+           
+            foreach (var item in departmentMaster)
+            {
+                DepartmentMasterView departmentMasterView = new DepartmentMasterView();
+                departmentMasterView.Id = item.Id;
+                departmentMasterView.DeptCode = item.DeptCode;
+                departmentMasterView.DeptDetails = item.DeptDetails;
+                departmentMasterView.CreatedDate = item.CreatedDate;
+                departmentMasterView.ParentName = item.ParentId != null ? unitOfWork.HrDepartmentMasterRepository.GetTWithGuid(item.ParentId).DeptDetails : "";
+                departmentMasterViews.Add(departmentMasterView);
+            }
 
             return departmentMasterViews;
         }

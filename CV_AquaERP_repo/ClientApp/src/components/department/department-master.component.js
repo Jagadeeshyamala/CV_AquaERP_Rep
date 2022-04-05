@@ -51,7 +51,6 @@ class DepartmentMasterList extends React.Component {
                 ParentName: ""
             },
             depts: [],
-            departmets: []
 
         };
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -113,7 +112,7 @@ debugger;
             var input = {
                 DeptCode: item.deptCode,
                 DeptDetails: item.deptDetails,
-                ParentId: !!item.parentId ? item.parentId.parentId : null
+                ParentId: !!item.Parent ? item.Parent.parentId : null
             }
             this.props.CreateHrDepartmentMaster(input).then((data) => {
                 alert("Department has been added successfully.");
@@ -132,7 +131,7 @@ debugger;
                 Id: item.id,
                 DeptCode: item.deptCode,
                 DeptDetails: item.deptDetails,
-                ParentId: item.parentId.parentId
+                ParentId: !!item.Parent ? item.Parent.parentId : null
             }
             this.props.UpdateHrDepartmentMaster(item.id, input).then((data) => {
                 alert("Department has been updated successfully.");
@@ -153,8 +152,17 @@ debugger;
     )
 
     render() {
-
-        const { departmets } = this.props;
+         const { departmets } = this.props;
+         let deptData =!!departmets && departmets.map(d => ({
+            id: d.id,
+            deptCode:d.deptCode,
+            deptDetails: d.deptDetails,
+            createdDate:d.createdDate,
+            Parent:{
+                parentId:d.id,
+                parentName:  d.parentName
+            }
+          }));
         return <React.Fragment>
             <div id="adddepartment" className="profile-page main-content">
                 <div className="card-container">
@@ -165,7 +173,7 @@ debugger;
 
                         <Grid style={{
                             height: "400px"
-                        }} data={departmets} pageable={true} total={departmets.length}
+                        }} data={deptData} pageable={true} total={departmets.length}
                             sortable={true}>
                             <div style={{ display: 'none' }} >
 
@@ -173,7 +181,7 @@ debugger;
                             </div>
                             <Column field="deptCode" title="Dept Code" width="250px" />
                             <Column field="deptDetails" title="Dept Details" width="350px" />
-                            <Column field="parentName" title="Parent Name" width="250px" />
+                            <Column field="Parent.parentName" title="Parent Name" width="250px" />
                             <Column field="createdDate"
                                 title="Created Date"
                                 width="250px" filter="date"
