@@ -1,0 +1,25 @@
+th{
+    color: white;
+    background-color: darkblue;
+  }
+
+  .btn-edit{
+    color: white;
+    background-color: blue;
+  }
+
+  .k-header{
+    color: white;
+    background-color: darkblue !important;
+  }
+
+  .btn-save{
+    color: white;
+    background-color: green !important;
+  }
+
+  .btn-cancel{
+    color: white;
+    background-color: red !important;  
+  }
+  
