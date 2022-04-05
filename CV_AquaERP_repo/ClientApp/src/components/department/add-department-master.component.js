@@ -11,15 +11,6 @@ import './department.css';
 const minValueValidator = (value) =>
 !!value ? "" : "The field is required.";
 
-const NonNegativeNumericInput = (fieldRenderProps) => {
-  const { validationMessage, visited, ...others } = fieldRenderProps;
-  return (
-    <div>
-      <NumericTextBox {...others} />
-      {visited && validationMessage && <Error>{validationMessage}</Error>}
-    </div>
-  );
-};
 const acceptSixtChar = (e) => {
   debugger;
   if (e.target.value.length > 5) {
@@ -49,7 +40,7 @@ const AddDepartment = (props) => {
           <Field  validator={minValueValidator} name={"deptDetails"} component={Input} label={"Department Name"} />
         </div>
         <div style={{ padding: 10 }} className="mb-3">
-          <Field data={departments}  dataItemKey="id" name={"id"} component={DropDownList} textField={"parentName"} label={"Parent"} />         
+          <Field data={departments} name={"parentId"} component={DropDownList} textField={"parentName"} label={"Parent"} />         
         
         </div>
 
