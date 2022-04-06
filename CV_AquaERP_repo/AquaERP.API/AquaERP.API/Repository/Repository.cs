@@ -32,7 +32,7 @@ namespace AquaERP.API.Repository
         {
             return dbSet.Find(id);
         }
-        public TEntity GetTWithGuid(Guid id)
+        public TEntity GetTWithGuid(Guid? id)
         {
             return dbSet.Find(id);
         }

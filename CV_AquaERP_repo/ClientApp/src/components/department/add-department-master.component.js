@@ -4,20 +4,13 @@ import { Form, Field, FormElement } from "@progress/kendo-react-form";
 import { Input, NumericTextBox } from "@progress/kendo-react-inputs";
 import { DropDownList } from "@progress/kendo-react-dropdowns";
 import { Error } from "@progress/kendo-react-labels";
+import './department.css';
+
 
 
 const minValueValidator = (value) =>
 !!value ? "" : "The field is required.";
 
-const NonNegativeNumericInput = (fieldRenderProps) => {
-  const { validationMessage, visited, ...others } = fieldRenderProps;
-  return (
-    <div>
-      <NumericTextBox {...others} />
-      {visited && validationMessage && <Error>{validationMessage}</Error>}
-    </div>
-  );
-};
 const acceptSixtChar = (e) => {
   debugger;
   if (e.target.value.length > 5) {
@@ -31,10 +24,7 @@ const AddDepartment = (props) => {
     parentId: dpt.id,
     parentName: dpt.deptDetails
   }));
-
-  
   const actionText = props.action == 'Add' ? 'Save' : 'Update';
-  const [Depts, setDepts] = useState([])
   const [Title, setTitle] = useState(props.action + ' Department')
   const [btnSave, setbtnSave] = useState(actionText)
 
@@ -50,15 +40,16 @@ const AddDepartment = (props) => {
           <Field  validator={minValueValidator} name={"deptDetails"} component={Input} label={"Department Name"} />
         </div>
         <div style={{ padding: 10 }} className="mb-3">
-          <Field name={"parentId"} component={DropDownList} data={departments} textField={"parentName"} label={"Parent"} />
+        <Field data={departments} name={"Parent"} component={DropDownList} textField={"parentName"} label={"Parent"} /> 
+        
         </div>
 
       </fieldset>
       <div style={{ paddingLeft: 10 }} className="k-form-buttons">
-        <button type={"submit"} className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-primary">
+        <button type={"submit"} className="k-button k-button-md k-rounded-md k-button-solid btn-save">
           {btnSave}
         </button>
-        <button type={"submit"} className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-base" onClick={props.cancelEdit}>
+        <button type={"submit"} className="k-button k-button-md k-rounded-md k-button-solid btn-cancel" onClick={props.cancelEdit}>
           Cancel
         </button>
       </div>
