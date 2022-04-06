@@ -4,6 +4,8 @@ import { Grid, GridColumn as Column } from "@progress/kendo-react-grid";
 import "@progress/kendo-theme-default/dist/all.css"
 import AddDepartment from './add-department-master.component';
 import { formatDate } from '@telerik/kendo-intl';
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 import { connect } from "react-redux";
 import './department.css';
@@ -91,22 +93,41 @@ class DepartmentMasterList extends React.Component {
         });
     };
     enterDelete = (item) => {
-        if (!window.confirm('Do you want to Delete Department ' + item.deptDetails))
-            return;
-        else {
-            this.props.DeleteHrDepartmentMaster(item.id)
-                .then(() => {
-                    this.setState({
-                        updateStatus: true
-                    });
-                })
-                .catch((e) => {
-                    console.log(e);
-                });
-        }
+        confirmAlert({
+            customUI: ({ onClose }) => {
+                return (
+                    <div className='custom-ui'>
+                        <div className='alert-header'>Confirm to delete <button className='btn-close' onClick={onClose}>X</button></div>
+                        <div className='alert-body'>
+                            <div>Do you want to Delete Department {item.deptDetails} ?</div>
+                        
+                        </div>
+                        <div className='alert-footer'>
+                         
+                            <button className='btn-yes'
+                                onClick={() => {
+                                    this.props.DeleteHrDepartmentMaster(item.id)
+                                        .then(() => {
+                                            this.setState({
+                                                updateStatus: true
+                                            });
+                                        })
+                                        .catch((e) => {
+                                            console.log(e);
+                                        });
+                                    onClose();
+                                }}
+                            >
+                                Yes
+                            </button>
+                            <button className='btn-no' onClick={onClose}>No</button>
+                          </div>
+                    </div>
+                );
+            }
+        });
     };
     handleSubmit = (item) => {
-debugger;
         if (!item.id) {
 
             var input = {
@@ -115,7 +136,20 @@ debugger;
                 ParentId: !!item.Parent ? item.Parent.parentId : null
             }
             this.props.CreateHrDepartmentMaster(input).then((data) => {
-                alert("Department has been added successfully.");
+                confirmAlert({
+                    customUI: ({ onClose }) => {
+                        return (
+                            <div className='custom-ui'>
+                                <div className='alert-action-body'>
+                                    <div>Department has been added successfully.</div>
+                                </div>
+                                <div className='alert-footer'>
+                                    <button className='btn-no' onClick={onClose}>Cancel</button>
+                                  </div>
+                            </div>
+                        );
+                    }
+                });
                 this.setState({
                     setOpenForm: false,
                     updateStatus: true
@@ -134,7 +168,20 @@ debugger;
                 ParentId: !!item.Parent ? item.Parent.parentId : null
             }
             this.props.UpdateHrDepartmentMaster(item.id, input).then((data) => {
-                alert("Department has been updated successfully.");
+                confirmAlert({
+                    customUI: ({ onClose }) => {
+                        return (
+                            <div className='custom-ui'>
+                                <div className='alert-action-body'>
+                                    <div>Department has been updated successfully.</div>
+                                </div>
+                                <div className='alert-footer'>
+                                    <button className='btn-cancel' onClick={onClose}>Cancel</button>
+                                  </div>
+                            </div>
+                        );
+                    }
+                });
                 this.setState({
                     setOpenForm: false,
                     updateStatus: true
@@ -152,17 +199,17 @@ debugger;
     )
 
     render() {
-         const { departmets } = this.props;
-         let deptData =!!departmets && departmets.map(d => ({
+        const { departmets } = this.props;
+        let deptData = !!departmets && departmets.map(d => ({
             id: d.id,
-            deptCode:d.deptCode,
+            deptCode: d.deptCode,
             deptDetails: d.deptDetails,
-            createdDate:d.createdDate,
-            Parent:{
-                parentId:d.id,
-                parentName:  d.parentName
+            createdDate: d.createdDate,
+            Parent: {
+                parentId: d.id,
+                parentName: d.parentName
             }
-          }));
+        }));
         return <React.Fragment>
             <div id="adddepartment" className="profile-page main-content">
                 <div className="card-container">

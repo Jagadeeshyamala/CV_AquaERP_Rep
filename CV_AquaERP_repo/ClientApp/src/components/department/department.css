@@ -20,6 +20,72 @@ th{
 
   .btn-cancel{
     color: white;
-    background-color: red !important;  
+    background-color: red !important;
+    height: 32px;
+    border-radius: 6px;
   }
+  .react-confirm-alert-overlay{
+    background: rgba(12, 14, 23, 0.9)!important;
+  }
+
+  .custom-ui {
+    text-align: center;
+    width: 400px;
+    height: 150px !important;
+
+    background:  #d4e2e9;
+    box-shadow: 0 20px 75px rgb(0 0 0 / 23%);
+    color:black;
+    border-radius: 10px;
+    border: 2px solid darkblue;
+}
+
+.alert-header{
+  background-color: darkblue;
+  height: 20px;
+  padding: 10px;
+  color:white;
+}
+.btn-close{
+  right: 62px;
+    float: right;
+    font-size: 23px;
+    height: 36px;
+    margin-right: -11px;
+    margin-top: -7px;
+    background: none;
+    color: white;
+}
+
+.alert-body{
+  padding: 15px;
+  height: 40px;
+}
+
+.alert-action-body{  
+  padding-top: 40px;
+  height: 50px;
+}
+.alert-footer{
+  height: 25px;
+}
+
+.btn-yes{
+  color: white;
+  background-color: green !important;
+  height: 30px;
+  width: 50px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.btn-no{
+  color: white;
+  background-color: red !important;
+  height: 30px;
+  width: 50px;
+  border-radius: 5px; 
+  margin-left: 10px;
+}
+
   
