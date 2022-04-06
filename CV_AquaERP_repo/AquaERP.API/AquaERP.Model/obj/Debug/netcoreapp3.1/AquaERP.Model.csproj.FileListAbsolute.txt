@@ -29,6 +29,7 @@ C:\Users\jagad\Documents\GitHub\CV_AquaERP_repo\CV_AquaERP_repo\AquaERP.API\Aqua
 C:\Users\jagad\Documents\GitHub\CV_AquaERP_repo\CV_AquaERP_repo\AquaERP.API\AquaERP.Model\bin\Debug\netcoreapp3.1\AquaERP.Model.runtimeconfig.dev.json
 C:\Users\jagad\Documents\GitHub\CV_AquaERP_repo\CV_AquaERP_repo\AquaERP.API\AquaERP.Model\bin\Debug\netcoreapp3.1\AquaERP.Model.dll
 C:\Users\jagad\Documents\GitHub\CV_AquaERP_repo\CV_AquaERP_repo\AquaERP.API\AquaERP.Model\bin\Debug\netcoreapp3.1\AquaERP.Model.pdb
+C:\Users\jagad\Documents\GitHub\CV_AquaERP_repo\CV_AquaERP_repo\AquaERP.API\AquaERP.Model\obj\Debug\netcoreapp3.1\AquaERP.Model.csproj.AssemblyReference.cache
 C:\Users\jagad\Documents\GitHub\CV_AquaERP_repo\CV_AquaERP_repo\AquaERP.API\AquaERP.Model\obj\Debug\netcoreapp3.1\AquaERP.Model.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\jagad\Documents\GitHub\CV_AquaERP_repo\CV_AquaERP_repo\AquaERP.API\AquaERP.Model\obj\Debug\netcoreapp3.1\AquaERP.Model.AssemblyInfoInputs.cache
 C:\Users\jagad\Documents\GitHub\CV_AquaERP_repo\CV_AquaERP_repo\AquaERP.API\AquaERP.Model\obj\Debug\netcoreapp3.1\AquaERP.Model.AssemblyInfo.cs

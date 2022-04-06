@@ -44,7 +44,7 @@ namespace AquaERP.API.Repository
                 {
                     this.hrDesignationMasterRepository = new Repository<HrDesignationMaster>(this.aquaERPContext);
                 }
-                return this.HrDesignationMasterRepository;
+                return this.hrDesignationMasterRepository;
             }
         }
 
