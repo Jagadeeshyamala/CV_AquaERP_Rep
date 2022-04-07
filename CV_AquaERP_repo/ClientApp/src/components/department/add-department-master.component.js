@@ -40,7 +40,7 @@ const AddDepartment = (props) => {
           <Field  validator={minValueValidator} name={"deptDetails"} component={Input} label={"Department Name"} />
         </div>
         <div style={{ padding: 10 }} className="mb-3">
-        <Field data={departments} name={"Parent"} component={DropDownList} textField={"parentName"} label={"Parent"} /> 
+        <Field data={departments} dataItemKey="parentId" name={"Parent"} component={DropDownList} textField={"parentName"} label={"Parent"} /> 
         
         </div>
 
