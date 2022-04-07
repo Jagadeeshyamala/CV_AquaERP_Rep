@@ -71,7 +71,7 @@ namespace AquaERP.API.AquaERP.Services.AquaBusiness
                 data.CreatedDate = System.DateTime.Now;
                 data.DeptCode = input.DeptCode;
                 data.DeptDetails = input.DeptDetails;
-                data.ParentId = input.ParentId;
+                data.ParentId = input.ParentId == input.Id ? data.ParentId : input.ParentId;
                 unitOfWork.Save();
             }
             //return data;
