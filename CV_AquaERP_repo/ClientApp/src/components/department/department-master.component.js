@@ -68,7 +68,7 @@ class DepartmentMasterList extends React.Component {
 
     componentDidUpdate() {
         if (this.state.updateStatus) {
-            debugger;
+            
             this.bindData();
         }
     }

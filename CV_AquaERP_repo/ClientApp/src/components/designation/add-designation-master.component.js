@@ -46,11 +46,11 @@ const AddDesignation = (props) => {
           <Field  validator={minValueValidator} name={"desgDetails"} component={Input} label={"Designation Name"} />
         </div>
         <div style={{ padding: 10 }} className="mb-3">
-          <Field  validator={minValueValidator} name={"qualificationReq"} component={Input} label={"Qualification Req"} />
+          <Field  name={"qualificationReq"} component={Input} label={"Qualification Req"} />
         </div>
         <div style={{ padding: 10 }} className="mb-3">
         <div style={{ padding: 10 }} className="mb-3">
-          <Field  validator={minValueValidator} name={"desgInTelugu"} component={Input} label={"Designation in Telugu"} />
+          <Field  name={"desgInTelugu"} component={Input} label={"Designation in Telugu"} />
         </div>
         <Field
                 id={"experienceReq"}
@@ -58,7 +58,6 @@ const AddDesignation = (props) => {
                 label={"Experience Req"}
                 format={"n0"}
                 component={NumericTextBox}
-                validator={nightsValidator}
               />
        </div>
 
