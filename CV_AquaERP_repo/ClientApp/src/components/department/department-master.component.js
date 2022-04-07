@@ -144,7 +144,7 @@ class DepartmentMasterList extends React.Component {
                                     <div>Department has been added successfully.</div>
                                 </div>
                                 <div className='alert-footer'>
-                                    <button className='btn-no' onClick={onClose}>Cancel</button>
+                                    <button className='btn-no' onClick={onClose}>Ok</button>
                                   </div>
                             </div>
                         );
@@ -176,7 +176,7 @@ class DepartmentMasterList extends React.Component {
                                     <div>Department has been updated successfully.</div>
                                 </div>
                                 <div className='alert-footer'>
-                                    <button className='btn-cancel' onClick={onClose}>Cancel</button>
+                                    <button className='btn-cancel' onClick={onClose}>Ok</button>
                                   </div>
                             </div>
                         );
