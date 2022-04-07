@@ -18,7 +18,7 @@ class KendoGridDateCell extends React.Component {
         const value = this.props.dataItem[this.props.field];
         return (
             <td>
-                {formatDate(new Date(value), "MM/dd/yyyy")}
+                {formatDate(new Date(value), "dd/MM/yyyy")}
             </td>
         );
     }
@@ -60,11 +60,13 @@ class DepartmentMasterList extends React.Component {
         this.bindData();
     }
     componentWillUnmount() {
+        debugger;
         this.bindData();
     }
 
     componentDidUpdate() {
         if (this.state.updateStatus) {
+            debugger;
             this.bindData();
         }
     }
@@ -83,6 +85,7 @@ class DepartmentMasterList extends React.Component {
         });
     };
     enterEdit = (item) => {
+        debugger
         this.setState({
             setOpenForm: true,
             action: "Edit",

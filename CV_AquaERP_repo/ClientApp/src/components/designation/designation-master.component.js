@@ -15,11 +15,11 @@ const mapStateToProps = (state) => {
 const EditCommandCell = (props) => {
     return (
         <td>
-            <button style={{ margin: 10 }} className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-primary" onClick={() => props.enterEdit(props.dataItem)}>
-                Edit
+            <button style={{ margin: 10 }} className="k-button k-button-md k-rounded-md k-button-solid btn-edit" onClick={() => props.enterEdit(props.dataItem)}>
+                <span className="k-icon k-i-edit"></span> Edit
             </button>
             <button style={{ margin: 10 }} className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-primary" onClick={() => props.enterDelete(props.dataItem)}>
-                Delete
+                <span className="k-icon k-i-delete"></span>Delete
             </button>
         </td>
     );
@@ -48,8 +48,19 @@ class DesignationMasterList extends React.Component {
     componentDidMount() {
        this.bindData(); 
     }
+    componentWillUnmount() {
+        debugger;
+        this.bindData();
+    }
 
+    componentDidUpdate() {
+        if (this.state.updateStatus) {
+            debugger;
+            this.bindData();
+        }
+    }
     bindData(){
+        debugger
         this.props.GetHrDesignationMaster();
     }
 
@@ -141,13 +152,14 @@ class DesignationMasterList extends React.Component {
             <div id="adddesignation" className="profile-page main-content">
                 <div className="card-container">
                     <div className="card-component">
-                        <button style={{ marginBottom: 15 }} className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-info" onClick={this.handleCreate}>
-                            Create Designation
+                        
+                        <button style={{ marginBottom: 15, left: '89%' }} className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-info" onClick={this.handleCreate}>
+                            <span className="k-icon k-i-plus"></span> Create Designation
                         </button>
-
                         <Grid style={{
                             height: "400px"
-                        }} data={departmets}>
+                        }} data={departmets}pageable={true} total={departmets.length}
+                            sortable={true}>
                             <div style={{ display: 'none' }} >
 
                                 <Column field="id" title="ID" filterable={false} />

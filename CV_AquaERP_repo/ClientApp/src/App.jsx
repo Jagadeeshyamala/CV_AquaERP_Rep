@@ -108,7 +108,7 @@ const App = () => {
                                     <Route exact={true} path="/info" component={Info} />
                                     <Route exact={true} path="/sarole" component={SARoles} />
                                     <Route exact={true} path="/adddepartment" component={AddDepartment} />
-                                    <Route exact={true} path="/departmentlist" component={HrDepartment} />
+                                    <Route exact={true} path="/departmentlist" component={DepartmentMasterList} />
                                     {/* <Route exact={true} path='/adddepartment/:id' component={AddDepartment} /> */}
                                     <Route exact={true} path='/desinationlist' component={HrDesignation} />
                                     <Route exact={true} path='/designationlistmaster' component={DesignationMasterList} />
