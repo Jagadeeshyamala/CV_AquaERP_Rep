@@ -131,69 +131,140 @@ class DepartmentMasterList extends React.Component {
         });
     };
     handleSubmit = (item) => {
-        if (!item.id) {
+        debugger;
+        var existDeptCode=this.props.departmets.filter(a=>a.deptCode.toUpperCase()==item.deptCode.toUpperCase());
+        var existDeptDetails=this.props.departmets.filter(a=>a.deptDetails.toUpperCase()==item.deptDetails.toUpperCase());
 
-            var input = {
-                DeptCode: item.deptCode,
-                DeptDetails: item.deptDetails,
-                ParentId: !!item.Parent ? item.Parent.parentId : null
-            }
-            this.props.CreateHrDepartmentMaster(input).then((data) => {
-                confirmAlert({
-                    customUI: ({ onClose }) => {
-                        return (
-                            <div className='custom-ui'>
-                                <div className='alert-action-body'>
-                                    <div>Department has been added successfully.</div>
-                                </div>
-                                <div className='alert-footer'>
-                                    <button className='btn-no' onClick={onClose}>Ok</button>
-                                  </div>
+        if(existDeptCode.length > 0)
+        {
+            confirmAlert({
+                customUI: ({ onClose }) => {
+                    return (
+                        <div className='custom-ui'>
+                            <div className='alert-action-body'>
+                                <div>Department code has allready exist.Please try again.</div>
                             </div>
-                        );
-                    }
-                });
-                this.setState({
-                    setOpenForm: false,
-                    updateStatus: true
-                });
-            })
-                .catch((e) => {
-                    console.log(e);
-                });
+                            <div className='alert-footer'>
+                                <button className='btn-cancel' onClick={onClose}>Ok</button>
+                              </div>
+                        </div>
+                    );
+                }
+            });
+            this.setState({
+                setOpenForm: false,
+                updateStatus: false
+            });
+        }
+        else if(existDeptDetails.length > 0)
+        {
+            confirmAlert({
+                customUI: ({ onClose }) => {
+                    return (
+                        <div className='custom-ui'>
+                            <div className='alert-action-body'>
+                                <div>Department details has allready exist.Please try again.</div>
+                            </div>
+                            <div className='alert-footer'>
+                                <button className='btn-cancel' onClick={onClose}>Ok</button>
+                              </div>
+                        </div>
+                    );
+                }
+            });
+            this.setState({
+                setOpenForm: false,
+                updateStatus: false
+            });
+        }
+        else if(item.deptDetails.toUpperCase()==item.Parent.parentName)
+        {
+            confirmAlert({
+                customUI: ({ onClose }) => {
+                    return (
+                        <div className='custom-ui'>
+                            <div className='alert-action-body'>
+                                <div>Department details and Parent name should not be same.Please try again.</div>
+                            </div>
+                            <div className='alert-footer'>
+                                <button className='btn-cancel' onClick={onClose}>Ok</button>
+                              </div>
+                        </div>
+                    );
+                }
+            });
+            this.setState({
+                setOpenForm: false,
+                updateStatus: false
+            });
+        }
+        else
+        {
+            if (!item.id) {
 
-        }
-        else {
-            var input = {
-                Id: item.id,
-                DeptCode: item.deptCode,
-                DeptDetails: item.deptDetails,
-                ParentId: !!item.Parent ? item.Parent.parentId : null
-            }
-            this.props.UpdateHrDepartmentMaster(item.id, input).then((data) => {
-                confirmAlert({
-                    customUI: ({ onClose }) => {
-                        return (
-                            <div className='custom-ui'>
-                                <div className='alert-action-body'>
-                                    <div>Department has been updated successfully.</div>
+                var input = {
+                    DeptCode: item.deptCode,
+                    DeptDetails: item.deptDetails,
+                    ParentId: !!item.Parent ? item.Parent.parentId : null
+                }
+                this.props.CreateHrDepartmentMaster(input).then((data) => {
+                    confirmAlert({
+                        customUI: ({ onClose }) => {
+                            return (
+                                <div className='custom-ui'>
+                                    <div className='alert-action-body'>
+                                        <div>Department has been added successfully.</div>
+                                    </div>
+                                    <div className='alert-footer'>
+                                        <button className='btn-no' onClick={onClose}>Ok</button>
+                                      </div>
                                 </div>
-                                <div className='alert-footer'>
-                                    <button className='btn-cancel' onClick={onClose}>Ok</button>
-                                  </div>
-                            </div>
-                        );
-                    }
-                });
-                this.setState({
-                    setOpenForm: false,
-                    updateStatus: true
-                });
-            })
-                .catch((e) => {
-                    console.log(e);
-                });
+                            );
+                        }
+                    });
+                    this.setState({
+                        setOpenForm: false,
+                        updateStatus: true
+                    });
+                })
+                    .catch((e) => {
+                        console.log(e);
+                    });
+    
+            }
+            else {
+                var input = {
+                    Id: item.id,
+                    DeptCode: item.deptCode,
+                    DeptDetails: item.deptDetails,
+                    ParentId: !!item.Parent ? item.Parent.parentId : null
+                }
+                this.props.UpdateHrDepartmentMaster(item.id, input).then((data) => {
+                    confirmAlert({
+                        customUI: ({ onClose }) => {
+                            return (
+                                <div className='custom-ui'>
+                                    <div className='alert-action-body'>
+                                        <div>Department has been updated successfully.</div>
+                                    </div>
+                                    <div className='alert-footer'>
+                                        <button className='btn-cancel' onClick={onClose}>Ok</button>
+                                      </div>
+                                </div>
+                            );
+                        }
+                    });
+                    this.setState({
+                        setOpenForm: false,
+                        updateStatus: true
+                    });
+                })
+                    .catch((e) => {
+                        console.log(e);
+                    });
+            }
         }
+       
 
     }
 
