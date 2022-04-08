@@ -12,5 +12,6 @@ namespace AquaERP.API.DTOs
         public string DeptDetails { get; set; }
         public string ParentName { get; set; }
         public DateTime CreatedDate { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }
