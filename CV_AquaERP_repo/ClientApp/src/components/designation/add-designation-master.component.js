@@ -27,8 +27,8 @@ const acceptSixtChar = (e) => {
 
 const AddDesignation = (props) => {
   debugger
-    const nightsValidator = (value) =>
-  value ? "" : "Number of Nights is required.";
+  //   const nightsValidator = (value) =>
+  // value ? "" : "Number of Nights is required.";
   const actionText = props.action == 'Add' ? 'Save' : 'Update';
   const [Depts, setDepts] = useState([])
   const [Title, setTitle] = useState(props.action + ' Designation')

@@ -43,6 +43,7 @@ class DesignationMasterList extends React.Component {
             departmets:[]
 
         };
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
