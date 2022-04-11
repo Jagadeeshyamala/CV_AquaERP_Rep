@@ -131,77 +131,54 @@ class DepartmentMasterList extends React.Component {
         });
     };
     handleSubmit = (item) => {
-        debugger;
-        var existDeptCode=this.props.departmets.filter(a=>a.deptCode.toUpperCase()==item.deptCode.toUpperCase());
-        var existDeptDetails=this.props.departmets.filter(a=>a.deptDetails.toUpperCase()==item.deptDetails.toUpperCase());
+        var existDeptCode=this.props.departmets.filter(a=>a.deptCode.toUpperCase()==item.deptCode.toUpperCase() && a.isDeleted ==false);
+        var existDeptDetails=this.props.departmets.filter(a=>a.deptDetails.toUpperCase()==item.deptDetails.toUpperCase() && a.isDeleted ==false);
 
-        if(existDeptCode.length > 0)
-        {
-            confirmAlert({
-                customUI: ({ onClose }) => {
-                    return (
-                        <div className='custom-ui'>
-                            <div className='alert-action-body'>
-                                <div>Department code has allready exist.Please try again.</div>
-                            </div>
-                            <div className='alert-footer'>
-                                <button className='btn-cancel' onClick={onClose}>Ok</button>
-                              </div>
-                        </div>
-                    );
+             if (!item.id) {
+                if(existDeptCode.length > 0)
+                {
+                    confirmAlert({
+                        customUI: ({ onClose }) => {
+                            return (
+                                <div className='custom-ui'>
+                                    <div className='alert-action-body'>
+                                        <div>Department code has allready exist.Please try again.</div>
+                                    </div>
+                                    <div className='alert-footer'>
+                                        <button className='btn-cancel' onClick={onClose}>Ok</button>
+                                      </div>
+                                </div>
+                            );
+                        }
+                    });
+                    this.setState({
+                        setOpenForm: false,
+                        updateStatus: false
+                    });
                 }
-            });
-            this.setState({
-                setOpenForm: false,
-                updateStatus: false
-            });
-        }
-        else if(existDeptDetails.length > 0)
-        {
-            confirmAlert({
-                customUI: ({ onClose }) => {
-                    return (
-                        <div className='custom-ui'>
-                            <div className='alert-action-body'>
-                                <div>Department details has allready exist.Please try again.</div>
-                            </div>
-                            <div className='alert-footer'>
-                                <button className='btn-cancel' onClick={onClose}>Ok</button>
-                              </div>
-                        </div>
-                    );
+                else if(existDeptDetails.length > 0)
+                {
+                    confirmAlert({
+                        customUI: ({ onClose }) => {
+                            return (
+                                <div className='custom-ui'>
+                                    <div className='alert-action-body'>
+                                        <div>Department details has allready exist.Please try again.</div>
+                                    </div>
+                                    <div className='alert-footer'>
+                                        <button className='btn-cancel' onClick={onClose}>Ok</button>
+                                      </div>
+                                </div>
+                            );
+                        }
+                    });
+                    this.setState({
+                        setOpenForm: false,
+                        updateStatus: false
+                    });
                 }
-            });
-            this.setState({
-                setOpenForm: false,
-                updateStatus: false
-            });
-        }
-        else if(item.deptDetails.toUpperCase()==item.Parent.parentName)
-        {
-            confirmAlert({
-                customUI: ({ onClose }) => {
-                    return (
-                        <div className='custom-ui'>
-                            <div className='alert-action-body'>
-                                <div>Department details and Parent name should not be same.Please try again.</div>
-                            </div>
-                            <div className='alert-footer'>
-                                <button className='btn-cancel' onClick={onClose}>Ok</button>
-                              </div>
-                        </div>
-                    );
-                }
-            });
-            this.setState({
-                setOpenForm: false,
-                updateStatus: false
-            });
-        }
-        else
-        {
-            if (!item.id) {
-
+              
+                else{
                 var input = {
                     DeptCode: item.deptCode,
                     DeptDetails: item.deptDetails,
@@ -230,22 +207,17 @@ class DepartmentMasterList extends React.Component {
                     .catch((e) => {
                         console.log(e);
                     });
-    
+                }
             }
             else {
-                var input = {
-                    Id: item.id,
-                    DeptCode: item.deptCode,
-                    DeptDetails: item.deptDetails,
-                    ParentId: !!item.Parent ? item.Parent.parentId : null
-                }
-                this.props.UpdateHrDepartmentMaster(item.id, input).then((data) => {
+                 if(item.deptDetails.toUpperCase()==item.Parent.parentName)
+                {
                     confirmAlert({
                         customUI: ({ onClose }) => {
                             return (
                                 <div className='custom-ui'>
                                     <div className='alert-action-body'>
-                                        <div>Department has been updated successfully.</div>
+                                        <div>Department details and Parent name should not be same.Please try again.</div>
                                     </div>
                                     <div className='alert-footer'>
                                         <button className='btn-cancel' onClick={onClose}>Ok</button>
@@ -256,14 +228,43 @@ class DepartmentMasterList extends React.Component {
                     });
                     this.setState({
                         setOpenForm: false,
-                        updateStatus: true
+                        updateStatus: false
                     });
-                })
-                    .catch((e) => {
-                        console.log(e);
-                    });
+                }
+                else
+                {
+                    var input = {
+                        Id: item.id,
+                        DeptCode: item.deptCode,
+                        DeptDetails: item.deptDetails,
+                        ParentId: !!item.Parent ? item.Parent.parentId : null
+                    }
+                    this.props.UpdateHrDepartmentMaster(item.id, input).then((data) => {
+                        confirmAlert({
+                            customUI: ({ onClose }) => {
+                                return (
+                                    <div className='custom-ui'>
+                                        <div className='alert-action-body'>
+                                            <div>Department has been updated successfully.</div>
+                                        </div>
+                                        <div className='alert-footer'>
+                                            <button className='btn-cancel' onClick={onClose}>Ok</button>
+                                          </div>
+                                    </div>
+                                );
+                            }
+                        });
+                        this.setState({
+                            setOpenForm: false,
+                            updateStatus: true
+                        });
+                    })
+                        .catch((e) => {
+                            console.log(e);
+                        });
+                }
+             
             }
-        }
        
 
     }

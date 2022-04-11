@@ -19,11 +19,14 @@ const acceptSixtChar = (e) => {
 };
 
 const AddDepartment = (props) => {
-  let departments = [];
-  departments = props.depts.map(dpt => ({
+  let departments = [{parentId:null,parentName : "Select..."}];
+  props.depts.map(dpt => {
+  departments.push({
     parentId: dpt.id,
     parentName: dpt.deptDetails
-  }));
+  })
+ });
+
   const actionText = props.action == 'Add' ? 'Save' : 'Update';
   const [Title, setTitle] = useState(props.action + ' Department')
   const [btnSave, setbtnSave] = useState(actionText)
