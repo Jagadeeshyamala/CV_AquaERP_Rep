@@ -33,12 +33,15 @@ namespace AquaERP.API.AquaERP.Services.AquaBusiness
            
             foreach (var item in departmentMaster)
             {
-                DepartmentMasterView departmentMasterView = new DepartmentMasterView();
-                departmentMasterView.Id = item.Id;
-                departmentMasterView.DeptCode = item.DeptCode;
-                departmentMasterView.DeptDetails = item.DeptDetails;
-                departmentMasterView.CreatedDate = item.CreatedDate;
-                departmentMasterView.ParentName = item.ParentId != null ? unitOfWork.HrDepartmentMasterRepository.GetTWithGuid(item.ParentId).DeptDetails : "";
+                DepartmentMasterView departmentMasterView = new DepartmentMasterView
+                {
+                    Id = item.Id,
+                    DeptCode = item.DeptCode,
+                    DeptDetails = item.DeptDetails,
+                    CreatedDate = item.CreatedDate,
+                    IsDeleted = item.IsDeleted,
+                    ParentName = item.ParentId != null ? unitOfWork.HrDepartmentMasterRepository.GetTWithGuid(item.ParentId).DeptDetails : ""
+                };
                 departmentMasterViews.Add(departmentMasterView);
             }
 
