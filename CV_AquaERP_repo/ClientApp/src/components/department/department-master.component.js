@@ -28,11 +28,11 @@ class KendoGridDateCell extends React.Component {
 const EditCommandCell = (props) => {
     return (
         <td>
-            <button style={{ margin: 10 }} className="k-button k-button-md k-rounded-md k-button-solid btn-edit" onClick={() => props.enterEdit(props.dataItem)}>
-                <span className="k-icon k-i-edit"></span> Edit
+            <button style={{ margin: 4 }} className="k-button k-button-md k-rounded-md k-button-solid btn-edit" onClick={() => props.enterEdit(props.dataItem)}>
+                <span className="k-icon k-i-edit"></span> 
             </button>
-            <button style={{ margin: 10 }} className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-primary" onClick={() => props.enterDelete(props.dataItem)}>
-                <span className="k-icon k-i-delete"></span>Delete
+            <button style={{ margin: 4 }} className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-primary" onClick={() => props.enterDelete(props.dataItem)}>
+                <span className="k-icon k-i-delete"></span>
             </button>
         </td>
     );
@@ -128,10 +128,10 @@ class DepartmentMasterList extends React.Component {
         });
     };
     handleSubmit = (item) => {
-        var existDeptCode=this.props.departmets.filter(a=>a.deptCode.toUpperCase()==item.deptCode.toUpperCase() && a.isDeleted ==false);
-        var existDeptDetails=this.props.departmets.filter(a=>a.deptDetails.toUpperCase()==item.deptDetails.toUpperCase() && a.isDeleted ==false);
-
+       
              if (!item.id) {
+                var existDeptCode=this.props.departmets.filter(a=>a.deptCode.toUpperCase()==item.deptCode.toUpperCase() && a.isDeleted ==false);
+                var existDeptDetails=this.props.departmets.filter(a=>a.deptDetails.toUpperCase()==item.deptDetails.toUpperCase() && a.isDeleted ==false);
                 if(existDeptCode.length > 0)
                 {
                     confirmAlert({
@@ -207,7 +207,51 @@ class DepartmentMasterList extends React.Component {
                 }
             }
             else {
-                 if(item.deptDetails.toUpperCase()==item.Parent.parentName)
+                var existDeptCode=this.props.departmets.filter(a=>a.deptCode.toUpperCase()==item.deptCode.toUpperCase() && a.id !=item.id && a.isDeleted ==false);
+                var existDeptDetails=this.props.departmets.filter(a=>a.deptDetails.toUpperCase()==item.deptDetails.toUpperCase() && a.id !=item.id && a.isDeleted ==false);
+                if(existDeptCode.length > 0)
+                {
+                    confirmAlert({
+                        customUI: ({ onClose }) => {
+                            return (
+                                <div className='custom-ui'>
+                                    <div className='alert-action-body'>
+                                        <div>Department code has allready exist.Please try again.</div>
+                                    </div>
+                                    <div className='alert-footer'>
+                                        <button className='btn-cancel' onClick={onClose}>Ok</button>
+                                      </div>
+                                </div>
+                            );
+                        }
+                    });
+                    this.setState({
+                        setOpenForm: false,
+                        updateStatus: false
+                    });
+                }
+                else if(existDeptDetails.length > 0)
+                {
+                    confirmAlert({
+                        customUI: ({ onClose }) => {
+                            return (
+                                <div className='custom-ui'>
+                                    <div className='alert-action-body'>
+                                        <div>Department details has allready exist.Please try again.</div>
+                                    </div>
+                                    <div className='alert-footer'>
+                                        <button className='btn-cancel' onClick={onClose}>Ok</button>
+                                      </div>
+                                </div>
+                            );
+                        }
+                    });
+                    this.setState({
+                        setOpenForm: false,
+                        updateStatus: false
+                    });
+                }
+                else if(item.deptDetails.toUpperCase()==item.Parent.parentName.toUpperCase())
                 {
                     confirmAlert({
                         customUI: ({ onClose }) => {
@@ -286,7 +330,7 @@ class DepartmentMasterList extends React.Component {
             <div id="adddepartment" className="profile-page main-content">
                 <div className="card-container">
                     <div className="card-component">
-                        <button style={{ marginBottom: 15, left: '89%' }} className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-info" onClick={this.handleCreate}>
+                        <button style={{ marginBottom: 7, left: '89%' }} className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-info" onClick={this.handleCreate}>
                             <span className="k-icon k-i-plus"></span> Create Department
                         </button>
 
