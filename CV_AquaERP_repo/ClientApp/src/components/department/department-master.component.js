@@ -27,12 +27,12 @@ class KendoGridDateCell extends React.Component {
 }
 const EditCommandCell = (props) => {
     return (
-        <td>
-            <button style={{ margin: 10 }} className="k-button k-button-md k-rounded-md k-button-solid btn-edit" onClick={() => props.enterEdit(props.dataItem)}>
-                <span className="k-icon k-i-edit"></span> Edit
+        <td style={{ textAlign: 'center' }}>
+            <button style={{ margin: 3 }} className="k-button k-button-md k-rounded-md k-button-solid btn-edit" onClick={() => props.enterEdit(props.dataItem)}>
+                <span className="k-icon k-i-edit"></span>
             </button>
-            <button style={{ margin: 10 }} className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-primary" onClick={() => props.enterDelete(props.dataItem)}>
-                <span className="k-icon k-i-delete"></span>Delete
+            <button style={{ margin: 3 }} className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-primary" onClick={() => props.enterDelete(props.dataItem)}>
+                <span className="k-icon k-i-delete"></span>
             </button>
         </td>
     );
@@ -289,7 +289,7 @@ class DepartmentMasterList extends React.Component {
             <div id="adddepartment" className="profile-page main-content">
                 <div className="card-container">
                     <div className="card-component">
-                        <button style={{ marginBottom: 15, left: '89%' }} className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-info" onClick={this.handleCreate}>
+                        <button style={{ marginBottom: 15, left: '87%' }} className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-info" onClick={this.handleCreate}>
                             <span className="k-icon k-i-plus"></span> Create Department
                         </button>
 

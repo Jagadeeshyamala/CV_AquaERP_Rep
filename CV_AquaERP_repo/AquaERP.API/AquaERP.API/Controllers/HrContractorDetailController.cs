@@ -17,47 +17,47 @@ namespace AquaERP.API.Controllers
     {
         IHrContractorDetailBusiness objContractorDetail = new HrContractorDetailBusiness();
 
-        [HttpGet]
-        [Route("GetHrContractorDetails")]
-        public IEnumerable<HrContractorDetail> GetHrContractorDetails()
-        {
-            IEnumerable<HrContractorDetail> lstContractorDetails = new List<HrContractorDetail>();
+        //[HttpGet]
+        //[Route("GetHrContractorDetails")]
+        //public IEnumerable<HrContractorDetail> GetHrContractorDetails()
+        //{
+        //    IEnumerable<HrContractorDetail> lstContractorDetails = new List<HrContractorDetail>();
 
-            try
-            {
-                lstContractorDetails = objContractorDetail.GetHrContractorDetail();
-            }
-            catch (System.ApplicationException)
-            {
+        //    try
+        //    {
+        //        lstContractorDetails = objContractorDetail.GetHrContractorDetail();
+        //    }
+        //    catch (System.ApplicationException)
+        //    {
 
-                throw;
-            }
-            catch (System.Exception)
-            {
+        //        throw;
+        //    }
+        //    catch (System.Exception)
+        //    {
 
-                throw;
-            }
-            return lstContractorDetails;
-        }
-        [HttpGet]
-        [Route("HrContractorDetailsInsert")]
-        public HrContractorDetail HrContractorDetailsInsert(HrContractorDetail input)
-        {
-            try
-            {
-                var dd = objContractorDetail.HrContractorDetailInsert(input);
-                return dd;
-            }
-            catch (System.ApplicationException)
-            {
+        //        throw;
+        //    }
+        //    return lstContractorDetails;
+        //}
+        //[HttpGet]
+        //[Route("HrContractorDetailsInsert")]
+        //public HrContractorDetail HrContractorDetailsInsert(HrContractorDetail input)
+        //{
+        //    try
+        //    {
+        //        var dd = objContractorDetail.HrContractorDetailInsert(input);
+        //        return dd;
+        //    }
+        //    catch (System.ApplicationException)
+        //    {
 
-                throw;
-            }
-            catch (System.Exception)
-            {
+        //        throw;
+        //    }
+        //    catch (System.Exception)
+        //    {
 
-                throw;
-            }
-        }
+        //        throw;
+        //    }
+        //}
     }
 }
