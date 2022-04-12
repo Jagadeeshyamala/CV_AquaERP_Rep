@@ -10,6 +10,7 @@ import AddRole from './pages/addrole.js';
 import HrDepartment from './pages/departmentList';
 import AddDepartment from './components/department/add-department-master.component';
 import DepartmentMasterList from './components/department/department-master.component';
+import EmployeeMaster from './components/employee/employee-master.component';
 import DrawerRouterContainer from './components/DrawerRouterContainer.jsx';
 import { AppContext } from './AppContext';
 import { countries } from './resources/countries';
@@ -104,10 +105,10 @@ const App = () => {
                                     <Route exact={true} path="/profile" component={Profile} />
                                     <Route exact={true} path="/info" component={Info} />
                                     <Route exact={true} path="/sarole" component={SARoles} />
-                                    <Route exact={true} path="/adddepartment" component={AddDepartment} />
+                                    {/* <Route exact={true} path="/adddepartment" component={AddDepartment} /> */}
                                     <Route exact={true} path="/departmentlist" component={HrDepartment} />
-                                    {/* <Route exact={true} path='/adddepartment/:id' component={AddDepartment} /> */}
                                     <Route exact={true} path='/desinationlist' component={DepartmentMasterList} />
+                                    <Route exact={true} path='/employeeinfo' component={EmployeeMaster} />
                                 </Switch>
                             </DrawerRouterContainer>
                         </HashRouter>

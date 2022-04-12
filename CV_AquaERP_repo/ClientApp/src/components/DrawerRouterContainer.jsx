@@ -17,10 +17,10 @@ const items = [
     { name: 'sarole', icon: 'k-i-information', route: '/sarole' },
     { name: 'department', icon: 'k-i-user', route: '/departmentlist' },
     { name: 'designation', icon: 'k-i-user', route: '/desinationlist' },
+    { name: 'employee', icon: 'k-i-user', route: '/employeeinfo' },
     { name: 'addrole', icon: 'k-i-bell', route: '/addrole' },
     { separator: true },
-    { name: 'adddepartment', icon: 'k-i-user', route: '/adddepartment' },
-    { name: 'editdepartment', icon: 'k-i-user', route: '/adddepartment/:id', },
+    
 ];
 
 class DrawerRouterContainer extends React.Component {
