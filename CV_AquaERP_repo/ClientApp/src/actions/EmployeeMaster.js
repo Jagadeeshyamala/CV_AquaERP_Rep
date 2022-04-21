@@ -10,8 +10,24 @@ import {
   
       dispatch({
         type: GET_DATA,
+        methodType:'DEPARTMENT',
         payload: response.data
       });
+    }
+    catch (error) {
+      console.log(error);
+    }
+  }
+  export const GetHrDesignationInfo = () => async (dispatch) => {
+    debugger;
+    try {
+      const response = await AquaDataService.getAll('/HREmployeeMaster/GetHrDesignationMaster');
+      debugger;
+      dispatch({
+        type: GET_DATA,
+        payload: response.data
+      });
+       return Promise.resolve(response.data);
     }
     catch (error) {
       console.log(error);

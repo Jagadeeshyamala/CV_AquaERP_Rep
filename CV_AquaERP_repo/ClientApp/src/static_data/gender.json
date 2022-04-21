@@ -1,0 +1,14 @@
+[
+    {
+      "GenderID": "M",
+      "GenderName": "Male"
+    },
+    {
+        "GenderID": "F",
+        "GenderName": "Female"
+    },
+    {
+        "GenderID": "T",
+        "GenderName": "Trans Gender"
+    }
+]

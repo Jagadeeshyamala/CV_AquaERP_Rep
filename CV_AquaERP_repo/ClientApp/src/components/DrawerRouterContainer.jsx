@@ -18,6 +18,9 @@ const items = [
     { name: 'department', icon: 'k-i-user', route: '/departmentlist' },
     { name: 'designation', icon: 'k-i-user', route: '/desinationlist' },
     { name: 'employee', icon: 'k-i-user', route: '/employeeinfo' },
+    { name: 'addEmployee', icon: 'k-i-user', route: '/addEmployeeInfo' },
+    { name: 'addBasicInfo', icon: 'k-i-user', route: '/addBasicInfo' },
+    { name: 'addPersonalInfo', icon: 'k-i-user', route: '/addPersonalInfo' },
     { name: 'addrole', icon: 'k-i-bell', route: '/addrole' },
     { separator: true },
     
