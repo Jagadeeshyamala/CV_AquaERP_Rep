@@ -11,7 +11,6 @@ import HrDepartment from './pages/departmentList';
 import HrDesignation from './pages/designationlist';
 import AddDepartment from './components/department/add-department-master.component';
 import DepartmentMasterList from './components/department/department-master.component';
-import DesignationMasterList from './components/designation/designation-master.component';
 import DrawerRouterContainer from './components/DrawerRouterContainer.jsx';
 import { AppContext } from './AppContext';
 import { countries } from './resources/countries';

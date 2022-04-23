@@ -27,8 +27,7 @@ const items = [
     { name: 'designation', icon: 'k-i-user', route: '/designationlistmaster',id: 8,parentId: 5 },
     { name: 'addrole', icon: 'k-i-bell', route: '/addrole',id: 9,parentId: 5 },
     { separator: true },
-    { name: 'adddepartment', icon: 'k-i-user', route: '/adddepartment' },
-    { name: 'editdepartment', icon: 'k-i-user', route: '/adddepartment/:id', },
+    
 ];
 
 class DrawerRouterContainer extends React.Component {
