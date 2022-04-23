@@ -1,0 +1,18 @@
+[
+    {
+      "MaritalStatusID": "M",
+      "MaritalStatusName": "Married"
+    },
+    {
+        "MaritalStatusID": "S",
+        "MaritalStatusName": "Single"
+    },
+    {
+        "MaritalStatusID": "W",
+        "MaritalStatusName": "Widowed"
+    },
+    {
+        "MaritalStatusID": "D",
+        "MaritalStatusName": "Divorced"
+    }
+]

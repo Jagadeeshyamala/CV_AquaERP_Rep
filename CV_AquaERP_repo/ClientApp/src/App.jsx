@@ -13,8 +13,10 @@ import AddDepartment from './components/department/add-department-master.compone
 import DepartmentMasterList from './components/department/department-master.component';
 import DesignationMasterList from './components/designation/designation-master.component';
 import EmployeeMaster from './components/employee/employee-master.component';
-import ContractorMaster from './components/Contractor/contractor-master.component.js';
-import DrawerRouterContainer from './components/DrawerRouterContainer2.js';
+import AddEmployeeMaster from './components/employee/add-employee-master.component';
+import AddBasicInfo from './components/employee/add-basic-info.component';
+import AddPersonalInfo from './components/employee/add-personal-info.component';
+import DrawerRouterContainer from './components/DrawerRouterContainer.jsx';
 import { AppContext } from './AppContext';
 import { countries } from './resources/countries';
 import { IntlProvider, load, LocalizationProvider, loadMessages } from '@progress/kendo-react-intl';
@@ -109,13 +111,13 @@ const App = () => {
                                     <Route exact={true} path="/profile" component={Profile} />
                                     <Route exact={true} path="/info" component={Info} />
                                     <Route exact={true} path="/sarole" component={SARoles} />
-                                    <Route exact={true} path="/adddepartment" component={AddDepartment} />
-                                    <Route exact={true} path="/departmentlist" component={DepartmentMasterList} />
-                                    {/* <Route exact={true} path='/adddepartment/:id' component={AddDepartment} /> */}
-                                    <Route exact={true} path='/desinationlist' component={HrDesignation} />
-                                    <Route exact={true} path='/designationlistmaster' component={DesignationMasterList} />
-                                    <Route exact={true} path='/employeelist' component={EmployeeMaster} />
-                                    <Route exact={true} path='/contractorlist' component={ContractorMaster} />
+                                    {/* <Route exact={true} path="/adddepartment" component={AddDepartment} /> */}
+                                    <Route exact={true} path="/departmentlist" component={HrDepartment} />
+                                    <Route exact={true} path='/desinationlist' component={DepartmentMasterList} />
+                                    <Route exact={true} path='/addEmployeeInfo' component={AddEmployeeMaster} />
+                                    <Route exact={true} path='/addBasicInfo' component={AddBasicInfo} />
+                                    <Route exact={true} path='/addPersonalInfo' component={AddPersonalInfo} />
+                                    <Route exact={true} path='/employeeinfo' component={EmployeeMaster} />
                                 </Switch>
                             </DrawerRouterContainer>
                         </HashRouter>
