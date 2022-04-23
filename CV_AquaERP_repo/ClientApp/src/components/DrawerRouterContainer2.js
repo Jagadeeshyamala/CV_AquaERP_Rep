@@ -35,133 +35,256 @@ const DrawerContainer = props => {
     text: 'HR',
     icon: 'k-i-heart',
     id: 2,
-    ['data-expanded']: true,
-    route: '/food'
-  }, {
+    ['data-expanded']: false
+  },
+  {
+    text: 'Master',
+    icon: 'k-i-heart',
+    id: 3,
+    parentId: 2,
+    ['data-expanded']: false
+  }
+  , {
     text: 'Department Master',
     icon: 'k-i-minus',
     id: 4,
-    parentId: 2,
-    route: '/food/japanese'
+    parentId: 3,
+    route: '/departmentlist'
+  },
+  {
+    text: 'Designation Master',
+    icon: 'k-i-minus',
+    id: 5,
+    parentId: 3,
+    route: '/designationlistmaster'
   },
   {
     text: 'Controctor Master',
     icon: 'k-i-minus',
-    id: 5,
-    parentId: 2,
-    route: '/food/japanese'
+    id: 6,
+    parentId: 3,
+    route: '/contractorlist'
   },
   {
     text: 'Employee Master',
     icon: 'k-i-minus',
-    id: 6,
-    parentId: 2,
-    route: '/food/japanese'
+    id: 7,
+    parentId: 3,
+    route: '/employeelist'
   },
   {
     text: 'Holydays Master',
     icon: 'k-i-minus',
-    id: 7,
+    id: 8,
+    parentId: 3,
+    route: '/holydaymaster'
+  },
+  {
+    text: 'Transactions',
+    icon: 'k-i-heart',
+    id: 9,
     parentId: 2,
-    route: '/food/japanese'
+    ['data-expanded']: false
   },
   {
     text: 'Manual Attendance',
     icon: 'k-i-pencil',
-    id: 8,
-    parentId: 2,
-    route: '/food/japanese'
+    id: 10,
+    parentId: 9,
+    route: '/manualattedance'
   },
   {
     text: 'Biometric IN/OUT Changes',
     icon: 'k-i-pencil',
-    id: 8,
-    parentId: 2,
-    route: '/food/japanese'
+    id: 11,
+    parentId: 9,
+    route: '/biometricmodifications'
   },{
-    text: 'Manual Attendance',
+    text: 'OnDuty',
     icon: 'k-i-pencil',
-    id: 9,
-    parentId: 2,
-    route: '/food/japanese'
+    id: 12,
+    parentId: 9,
+    route: '/onduty'
   },
   {
     text: 'Leave Request',
     icon: 'k-i-pencil',
-    id: 10,
+    id: 13,
+    parentId: 9,
+    route: '/leaverequest'
+  },
+  {
+    text: 'Reports',
+    icon: 'k-i-calendar',
+    id: 14,
     parentId: 2,
-    route: '/'
+    ['data-expanded']: false
   },
   {
     text: 'Employee Report',
     icon: 'k-i-calendar',
-    id: 11,
-    parentId: 2,
+    id: 15,
+    parentId: 14,
     route: '/'
   },
   {
     text: 'Local Workers Report',
     icon: 'k-i-calendar',
-    id: 12,
-    parentId: 2,
+    id: 16,
+    parentId: 14,
     route: '/'
   },
   {
     text: 'Daily Attendance Report',
     icon: 'k-i-calendar',
-    id: 13,
-    parentId: 2,
+    id: 17,
+    parentId: 14,
     route: '/'
   },
   {
     text: 'Monthly IN/OUT Report',
     icon: 'k-i-pencil',
-    id: 10,
-    parentId: 2,
+    id: 18,
+    parentId: 14,
     route: '/'
   },
    {
     separator: true
   },
    {
-    text: 'Food',
+    text: 'General Store',
     icon: 'k-i-heart',
-    id: 2,
-    ['data-expanded']: true,
-    route: '/food'
-  }, {
-    text: 'Japanese Food',
+    id: 19,
+    ['data-expanded']: false
+  }, 
+  {
+    text: 'Master',
+    icon: 'k-i-heart',
+    id: 20,
+    parentId: 19,
+    ['data-expanded']: false
+  },
+  {
+    text: 'Supplier',
     icon: 'k-i-minus',
-    id: 4,
-    parentId: 2,
-    route: '/food/japanese'
+    id: 21,
+    parentId: 20,
+    route: '/supplier'
   }, {
-    text: 'Italian Food',
+    text: 'Store Items',
     icon: 'k-i-minus',
-    id: 5,
-    parentId: 2,
-    route: '/food/italian'
-  }, {
-    separator: true
-  }, {
-    text: 'Travel',
-    icon: 'k-i-globe-outline',
-    ['data-expanded']: true,
-    id: 3,
-    route: '/travel'
-  }, {
-    text: 'Europe',
+    id: 22,
+    parentId: 20,
+    route: '/items'
+  },
+  {
+    text: 'Transaction',
+    icon: 'k-i-heart',
+    id: 23,
+    parentId: 19,
+    ['data-expanded']: false
+  },
+  {
+    text: 'Issue Indent',
     icon: 'k-i-minus',
-    id: 6,
-    parentId: 3,
-    route: '/travel/europe'
-  }, {
-    text: 'North America',
+    id: 24,
+    parentId: 23,
+    route: '/issueindent'
+  },
+  {
+    text: 'PO Indent',
     icon: 'k-i-minus',
-    id: 7,
-    parentId: 3,
-    route: '/travel/america'
-  }]);
+    id: 25,
+    parentId: 23,
+    route: '/poindent'
+  },
+  {
+    text: 'Reports',
+    icon: 'k-i-calendar',
+    id: 26,
+    parentId: 19,
+    ['data-expanded']: false
+  },
+  {
+    text: 'Item Details',
+    icon: 'k-i-minus',
+    id: 27,
+    parentId: 26,
+    route: '/itemdetails'
+  }, {
+    text: 'item Stock',
+    icon: 'k-i-minus',
+    id: 28                                                                          ,
+    parentId: 26,
+    route: '/stockreport'
+  },
+  {
+   text: 'PURCHASE',
+   icon: 'k-i-heart',
+   id: 29,
+   ['data-expanded']: false
+ }, {
+  text: 'Master',
+  icon: 'k-i-heart',
+  id: 30,
+  parentId: 29,
+  ['data-expanded']: false
+},
+{
+  text: 'Farmer/Agent',
+  icon: 'k-i-minus',
+  id: 31,
+  parentId: 30,
+  route: '/farmeragent'
+}, {
+  text: 'Count Price',
+  icon: 'k-i-minus',
+  id: 32,
+  parentId: 30,
+  route: '/items'
+},
+{
+  text: 'Transaction',
+  icon: 'k-i-heart',
+  id: 33,
+  parentId: 29,
+  ['data-expanded']: false
+},
+{
+  text: 'Purchase Enquery',
+  icon: 'k-i-minus',
+  id: 34,
+  parentId: 33,
+  route: '/purchaseenquery'
+},
+{
+  text: 'Vehicle Schedule',
+  icon: 'k-i-minus',
+  id: 35,
+  parentId: 33,
+  route: '/vehicleschedule'
+},
+{
+  text: 'Reports',
+  icon: 'k-i-calendar',
+  id: 36,
+  parentId: 29,
+  ['data-expanded']: false
+},
+{
+  text: 'Enquery Report',
+  icon: 'k-i-minus',
+  id: 37,
+  parentId: 36,
+  route: '/enqueryrepory'
+}, {
+  text: 'Schedule Report',
+  icon: 'k-i-minus',
+  id: 28                                                                          ,
+  parentId: 26,
+  route: '/schulereport'
+}
+]);
 
   const handleClick = () => {
     setDrawerExpanded(!drawerExpanded);
@@ -213,7 +336,8 @@ const DrawerContainer = props => {
       <Header
                     onButtonClick={handleClick}
                 />
-      <Drawer expanded={drawerExpanded} mode='push' width={280} items={data} item={CustomItem} onSelect={onSelect}>
+      <Drawer expanded={drawerExpanded} mode='push' width={280} items={data} item={CustomItem} onSelect={onSelect}
+                    mini={false}>
         <DrawerContent>
           {props.children}
         </DrawerContent>

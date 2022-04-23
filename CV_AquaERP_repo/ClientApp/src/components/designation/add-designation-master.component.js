@@ -52,13 +52,15 @@ const AddDesignation = (props) => {
         <div style={{ padding: 10 }} className="mb-3">
           <Field  name={"desgInTelugu"} component={Input} label={"Designation in Telugu"} />
         </div>
-        <Field
+        <div style={{ padding: 10 }} className="mb-3">
+          <Field
                 id={"experienceReq"}
                 name={"experienceReq"}
                 label={"Experience Req"}
                 format={"n0"}
                 component={NumericTextBox}
-              />
+                />
+        </div>
        </div>
 
       </fieldset>

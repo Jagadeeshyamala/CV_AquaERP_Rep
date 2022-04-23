@@ -26,6 +26,8 @@ const items = [
     { name: 'department', icon: 'k-i-user', route: '/desinationlist',id: 7,parentId: 5 },
     { name: 'designation', icon: 'k-i-user', route: '/designationlistmaster',id: 8,parentId: 5 },
     { name: 'addrole', icon: 'k-i-bell', route: '/addrole',id: 9,parentId: 5 },
+    { name: 'employee', icon: 'k-i-user', route: '/employeelist',id: 10,parentId: 5 },
+    { name: 'contractor', icon: 'k-i-user', route: '/contractorlist',id: 11,parentId: 5 },
     { separator: true },
     
 ];

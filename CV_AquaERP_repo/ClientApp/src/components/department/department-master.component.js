@@ -345,7 +345,7 @@ class DepartmentMasterList extends React.Component {
 
                                 <Column field="id" title="ID" filterable={false} />
                             </div>
-                            <Column field="deptCode" title="Dept Code" width="250px" />
+                            <Column field="deptCode" title="Dept Code"/>
                             <Column field="deptDetails" title="Dept Details" width="350px" />
                             <Column field="Parent.parentName" title="Parent Name" width="250px" />
                             <Column field="createdDate"
