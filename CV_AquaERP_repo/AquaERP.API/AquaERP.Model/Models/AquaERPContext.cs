@@ -21,13 +21,17 @@ namespace AquaERP.Model.Models
         public virtual DbSet<HrDepartmentMaster> HrDepartmentMasters { get; set; }
         public virtual DbSet<HrDesignationMaster> HrDesignationMasters { get; set; }
         public virtual DbSet<HrEmployeeInformationMaster> HrEmployeeInformationMasters { get; set; }
+        public virtual DbSet<HrEmployeeReference> HrEmployeeReferences { get; set; }
+        public virtual DbSet<HrFamilyDetail> HrFamilyDetails { get; set; }
+        public virtual DbSet<HrPersonExperience> HrPersonExperiences { get; set; }
+        public virtual DbSet<HrPersonalParticular> HrPersonalParticulars { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=PC;Initial Catalog=CV_ERP_Aqua;User Id=sa;Password=123;");
+                optionsBuilder.UseSqlServer("Server=PC;Database=CV_ERP_Aqua;User Id=sa;Password=123;");
             }
         }
 
@@ -125,7 +129,7 @@ namespace AquaERP.Model.Models
             {
                 entity.ToTable("HR_EmployeeInformationMaster");
 
-                entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
+                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.AadharNo)
                     .HasMaxLength(14)
@@ -171,8 +175,6 @@ namespace AquaERP.Model.Models
 
                 entity.Property(e => e.Dob).HasColumnType("date");
 
-                entity.Property(e => e.Doc).HasColumnType("date");
-
                 entity.Property(e => e.Doj).HasColumnType("date");
 
                 entity.Property(e => e.EmploymentUnder)
@@ -183,13 +185,10 @@ namespace AquaERP.Model.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Extension)
-                    .HasMaxLength(10)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.FatherHusband)
+                entity.Property(e => e.FatherOrhusband)
                     .HasMaxLength(100)
-                    .IsUnicode(false);
+                    .IsUnicode(false)
+                    .HasColumnName("FatherORHusband");
 
                 entity.Property(e => e.Gender)
                     .HasMaxLength(1)
@@ -231,25 +230,18 @@ namespace AquaERP.Model.Models
 
                 entity.Property(e => e.NameInTelugu).HasMaxLength(100);
 
-                entity.Property(e => e.Onroll).HasDefaultValueSql("((0))");
-
                 entity.Property(e => e.OtherAllowances).HasColumnType("decimal(10, 2)");
 
-                entity.Property(e => e.Pancard)
+                entity.Property(e => e.PanCard)
                     .HasMaxLength(10)
                     .IsUnicode(false);
 
-                entity.Property(e => e.PassPortNo)
+                entity.Property(e => e.PassportNo)
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.Property(e => e.PermanentAddress)
                     .HasMaxLength(300)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.PersonId)
-                    .IsRequired()
-                    .HasMaxLength(50)
                     .IsUnicode(false);
 
                 entity.Property(e => e.PfNo)
@@ -276,8 +268,112 @@ namespace AquaERP.Model.Models
 
                 entity.Property(e => e.TwelveHrs).HasColumnName("Twelve_Hrs");
 
-                entity.Property(e => e.UanNo)
+                entity.Property(e => e.Uanno)
                     .HasMaxLength(30)
+                    .IsUnicode(false)
+                    .HasColumnName("UANNo");
+            });
+
+            modelBuilder.Entity<HrEmployeeReference>(entity =>
+            {
+                entity.ToTable("HR_EmployeeReference");
+
+                entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
+
+                entity.Property(e => e.RelationShip)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<HrFamilyDetail>(entity =>
+            {
+                entity.ToTable("HR_FamilyDetails");
+
+                entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
+
+                entity.Property(e => e.Address)
+                    .IsRequired()
+                    .HasMaxLength(500)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Nominee)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Occupation)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.RelationShip)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("Relation_Ship");
+
+                entity.Property(e => e.Type)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<HrPersonExperience>(entity =>
+            {
+                entity.ToTable("HR_PersonExperience");
+
+                entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
+
+                entity.Property(e => e.CompanyName)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Designation)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FromDate).HasColumnType("date");
+
+                entity.Property(e => e.ReasonForLeaving)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ToDate).HasColumnType("date");
+            });
+
+            modelBuilder.Entity<HrPersonalParticular>(entity =>
+            {
+                entity.ToTable("HR_PersonalParticulars");
+
+                entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
+
+                entity.Property(e => e.EductionalQualification)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.HealthProblems)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.IdentityRemarks)
+                    .IsRequired()
+                    .HasMaxLength(500)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ReligionCasteSubCaste)
+                    .IsRequired()
+                    .HasMaxLength(50)
                     .IsUnicode(false);
             });
 

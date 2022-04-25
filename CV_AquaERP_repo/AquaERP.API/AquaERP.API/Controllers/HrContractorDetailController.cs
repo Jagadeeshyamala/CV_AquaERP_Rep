@@ -15,7 +15,12 @@ namespace AquaERP.API.Controllers
     [ApiController]
     public class HrContractorDetailController : ControllerBase
     {
-        IHrContractorDetailBusiness objContractorDetail = new HrContractorDetailBusiness();
+        IHrContractorDetailBusiness _objContractorDetail;
+
+        public HrContractorDetailController(IHrContractorDetailBusiness objContractorDetail)
+        {
+            _objContractorDetail = objContractorDetail;
+        }
 
         [HttpGet]
         [Route("GetHrContractorDetails")]
@@ -25,7 +30,7 @@ namespace AquaERP.API.Controllers
 
             try
             {
-                lstContractorDetails = objContractorDetail.GetHrContractorDetail();
+                lstContractorDetails = _objContractorDetail.GetHrContractorDetail();
             }
             catch (System.ApplicationException)
             {
@@ -45,7 +50,7 @@ namespace AquaERP.API.Controllers
         {
             try
             {
-                var dd = objContractorDetail.HrContractorDetailInsert(input);
+                var dd = _objContractorDetail.HrContractorDetailInsert(input);
                 return dd;
             }
             catch (System.ApplicationException)

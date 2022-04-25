@@ -1,5 +1,6 @@
 using AquaERP.API.AquaERP.Services.AquaBusiness;
 using AquaERP.API.AquaERP.Services.AquaInterface;
+using AquaERP.API.ExceptionsMiddleware;
 using AquaERP.API.Repository;
 using AquaERP.Model.Models;
 using Microsoft.AspNetCore.Builder;
@@ -36,6 +37,8 @@ namespace AquaERP.API
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
             services.AddScoped<IHrContractorDetailBusiness, HrContractorDetailBusiness> ();
+            services.AddScoped<IHrDepartmentMasterBusiness, HrDepartmentMasterBusiness>();
+            services.AddScoped<IHrEmployeeMasterBusiness, HrEmployeeMasterBusiness>();
 
             services.AddSwaggerGen(swagger =>
             {
@@ -79,6 +82,10 @@ namespace AquaERP.API
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "AquaERP API");
             });
+
+
+            app.UseMiddleware(typeof(ExceptionHandlingMiddleware));
+            
         }
     }
 }
