@@ -1,0 +1,10 @@
+[
+    {
+      "EmployeementID": "Company",
+      "EmployeementName": "Company"
+    },
+    {
+        "EmployeementID": "Contactor",
+      "EmployeementName": "Contactor"
+    }
+]

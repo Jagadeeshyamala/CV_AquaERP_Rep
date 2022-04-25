@@ -4,20 +4,25 @@ import {
 
 const initialState = [];
 
-function DepartmentMasterReducer(departmets = initialState, action) {
-    const { type, payload } = action;
-
+function DepartmentMasterReducer(state = initialState, action) {
+    const { type,methodType, payload } = action;
+  
+  
     switch (type) {
-        case GET_DATA:
-            return payload;
+        case GET_DATA:  
+        if(methodType==="DEPARTMENT")
+        {        
+                return payload; 
+        }   
+       
         case CREATE_DATA:
-            return [...departmets, payload];
+            return [...state, payload];
 
         case UPDATE_DATA:
-            return departmets.map((departmet) => {
+            return state.map((departmet) => {
                 if (departmet.id === payload.id) {
                     return {
-                        ...departmet,
+                        ...state,
                         ...payload,
                     };
                 } else {
@@ -28,9 +33,8 @@ function DepartmentMasterReducer(departmets = initialState, action) {
         case DELETE_DATA:
             return departmets.filter(({ id }) => id !== payload.id);
         default:
-            return departmets;
-    }
+            return state;
+        }
 };
 
 export default DepartmentMasterReducer;
-

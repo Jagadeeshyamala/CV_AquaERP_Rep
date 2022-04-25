@@ -1,10 +1,11 @@
 import {combineReducers} from 'redux';
 
-import DepartmentMasterReducer from './aquaERP-Reducer';
-import DesignationMasterReducer from './designation-Reducer';
+import DepartmentMasterReducer from './department-Reducer';
+import EmployeeMasterReducer from './employee-Reducer';
 const rootReducer =  combineReducers({
     departmets : DepartmentMasterReducer,
-    designations : DesignationMasterReducer
+    employees : EmployeeMasterReducer
+
 })
 
 export default rootReducer

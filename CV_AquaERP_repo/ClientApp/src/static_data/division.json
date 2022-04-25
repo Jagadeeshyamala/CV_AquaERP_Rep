@@ -1,0 +1,10 @@
+[
+    {
+      "DivisionID": "Worker",
+      "DivisionName": "Worker"
+    },
+    {
+        "DivisionID": "Staff",
+        "DivisionName": "Staff"
+    }
+]

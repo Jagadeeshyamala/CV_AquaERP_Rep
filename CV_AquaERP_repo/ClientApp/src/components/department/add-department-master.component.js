@@ -12,7 +12,6 @@ const minValueValidator = (value) =>
 !!value ? "" : "The field is required.";
 
 const acceptSixtChar = (e) => {
-  debugger;
   if (e.target.value.length > 5) {
     e.preventDefault();
   }

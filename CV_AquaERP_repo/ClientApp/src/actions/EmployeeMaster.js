@@ -19,15 +19,28 @@ import {
     }
   }
   export const GetHrDesignationInfo = () => async (dispatch) => {
-    debugger;
     try {
       const response = await AquaDataService.getAll('/HREmployeeMaster/GetHrDesignationMaster');
-      debugger;
       dispatch({
         type: GET_DATA,
+        methodType:"DESIGNATION",
         payload: response.data
       });
-       return Promise.resolve(response.data);
+
+    }
+    catch (error) {
+      console.log(error);
+    }
+  }
+  export const GetHrContractorDetails = () => async (dispatch) => {
+    try {
+      const response = await AquaDataService.getAll('/HREmployeeMaster/GetHrContractorDetails');
+      dispatch({
+        type: GET_DATA,
+        methodType:"CONTRACTOR",
+        payload: response.data
+      });
+
     }
     catch (error) {
       console.log(error);

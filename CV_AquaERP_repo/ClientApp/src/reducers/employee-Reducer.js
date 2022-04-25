@@ -2,21 +2,31 @@ import {
     GET_DATA,CREATE_DATA,UPDATE_DATA,DELETE_DATA
 } from "../actions/types";
 
-const initialState = {  payload: [],  isLoading: false,  error: {}};
+const initialState = {
+    designations:[],
+    contractors:[]
+};
 
-function DesignationMasterReducer(state = initialState, action) {
-    debugger;
-    const { type, payload } = action;
-
+function EmployeeMasterReducer(state = initialState, action) {
+    const { type,methodType, payload } = action;
     switch (type) {
-        case GET_DATA:
+        case GET_DATA:   
+        if(methodType==="DESIGNATION")
+        {         
+                return{
+                    ...state,
+                    designations : payload  
+                }
+        }
+        else if(methodType==="CONTRACTOR"){
             return{
-                 ...state,
-                 payload: payload,        
-                 isLoading: false   
-            };
+                ...state,
+                contractors : payload  
+            }
+        }
+          
         case CREATE_DATA:
-            return [...state, payload];
+            return state;
 
         case UPDATE_DATA:
             return state.map((designation) => {
@@ -37,5 +47,5 @@ function DesignationMasterReducer(state = initialState, action) {
     }
 };
 
-export default DesignationMasterReducer;
+export default EmployeeMasterReducer;
 

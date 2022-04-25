@@ -12,8 +12,6 @@ import AddDepartment from './components/department/add-department-master.compone
 import DepartmentMasterList from './components/department/department-master.component';
 import EmployeeMaster from './components/employee/employee-master.component';
 import AddEmployeeMaster from './components/employee/add-employee-master.component';
-import AddBasicInfo from './components/employee/add-basic-info.component';
-import AddPersonalInfo from './components/employee/add-personal-info.component';
 import DrawerRouterContainer from './components/DrawerRouterContainer.jsx';
 import { AppContext } from './AppContext';
 import { countries } from './resources/countries';
@@ -112,8 +110,7 @@ const App = () => {
                                     <Route exact={true} path="/departmentlist" component={HrDepartment} />
                                     <Route exact={true} path='/desinationlist' component={DepartmentMasterList} />
                                     <Route exact={true} path='/addEmployeeInfo' component={AddEmployeeMaster} />
-                                    <Route exact={true} path='/addBasicInfo' component={AddBasicInfo} />
-                                    <Route exact={true} path='/addPersonalInfo' component={AddPersonalInfo} />
+                    
                                     <Route exact={true} path='/employeeinfo' component={EmployeeMaster} />
                                 </Switch>
                             </DrawerRouterContainer>

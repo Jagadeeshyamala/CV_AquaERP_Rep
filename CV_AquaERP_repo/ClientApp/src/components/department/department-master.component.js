@@ -11,6 +11,7 @@ import { connect } from "react-redux";
 import './department.css';
 
 const mapStateToProps = (state) => {
+    debugger;
     return {
         departmets: state.departmets
     };
@@ -315,6 +316,7 @@ class DepartmentMasterList extends React.Component {
     )
 
     render() {
+        debugger;
         const { departmets } = this.props;
         let deptData = !!departmets && departmets.map(d => ({
             id: d.id,
