@@ -20,6 +20,7 @@ namespace AquaERP.Model.Models
         public virtual DbSet<HrContractorDetail> HrContractorDetails { get; set; }
         public virtual DbSet<HrDepartmentMaster> HrDepartmentMasters { get; set; }
         public virtual DbSet<HrDesignationMaster> HrDesignationMasters { get; set; }
+        public virtual DbSet<HrEmployeeDocument> HrEmployeeDocuments { get; set; }
         public virtual DbSet<HrEmployeeInformationMaster> HrEmployeeInformationMasters { get; set; }
         public virtual DbSet<HrEmployeeReference> HrEmployeeReferences { get; set; }
         public virtual DbSet<HrFamilyDetail> HrFamilyDetails { get; set; }
@@ -125,6 +126,19 @@ namespace AquaERP.Model.Models
                     .HasColumnName("Qualification_Req");
             });
 
+            modelBuilder.Entity<HrEmployeeDocument>(entity =>
+            {
+                entity.ToTable("HR_EmployeeDocument");
+
+                entity.Property(e => e.Id).ValueGeneratedNever();
+
+                entity.Property(e => e.DocumentName)
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FilePath).IsUnicode(false);
+            });
+
             modelBuilder.Entity<HrEmployeeInformationMaster>(entity =>
             {
                 entity.ToTable("HR_EmployeeInformationMaster");
@@ -139,8 +153,6 @@ namespace AquaERP.Model.Models
                     .HasMaxLength(15)
                     .IsUnicode(false);
 
-                entity.Property(e => e.BasicSalary).HasColumnType("decimal(10, 2)");
-
                 entity.Property(e => e.BiometricId)
                     .HasMaxLength(50)
                     .IsUnicode(false);
@@ -154,12 +166,6 @@ namespace AquaERP.Model.Models
                 entity.Property(e => e.ContactNo)
                     .HasMaxLength(15)
                     .IsUnicode(false);
-
-                entity.Property(e => e.Conveyance).HasColumnType("decimal(10, 2)");
-
-                entity.Property(e => e.Da)
-                    .HasColumnType("decimal(10, 2)")
-                    .HasColumnName("DA");
 
                 entity.Property(e => e.DeptCode)
                     .HasMaxLength(6)
@@ -176,6 +182,8 @@ namespace AquaERP.Model.Models
                 entity.Property(e => e.Dob).HasColumnType("date");
 
                 entity.Property(e => e.Doj).HasColumnType("date");
+
+                entity.Property(e => e.EmpImageUrl).IsUnicode(false);
 
                 entity.Property(e => e.EmploymentUnder)
                     .HasMaxLength(50)
@@ -195,10 +203,6 @@ namespace AquaERP.Model.Models
                     .IsUnicode(false)
                     .IsFixedLength(true);
 
-                entity.Property(e => e.Hra)
-                    .HasColumnType("decimal(10, 2)")
-                    .HasColumnName("HRA");
-
                 entity.Property(e => e.IhExperience)
                     .HasMaxLength(50)
                     .IsUnicode(false);
@@ -208,8 +212,6 @@ namespace AquaERP.Model.Models
                     .IsUnicode(false);
 
                 entity.Property(e => e.InactiveDate).HasColumnType("date");
-
-                entity.Property(e => e.Incentive).HasColumnType("decimal(10, 2)");
 
                 entity.Property(e => e.InternalId)
                     .HasMaxLength(100)
@@ -222,15 +224,11 @@ namespace AquaERP.Model.Models
                     .IsUnicode(false)
                     .IsFixedLength(true);
 
-                entity.Property(e => e.MedicalAllowance).HasColumnType("decimal(10, 2)");
-
                 entity.Property(e => e.Name)
                     .HasMaxLength(100)
                     .IsUnicode(false);
 
                 entity.Property(e => e.NameInTelugu).HasMaxLength(100);
-
-                entity.Property(e => e.OtherAllowances).HasColumnType("decimal(10, 2)");
 
                 entity.Property(e => e.PanCard)
                     .HasMaxLength(10)
@@ -241,7 +239,7 @@ namespace AquaERP.Model.Models
                     .IsUnicode(false);
 
                 entity.Property(e => e.PermanentAddress)
-                    .HasMaxLength(300)
+                    .HasMaxLength(2000)
                     .IsUnicode(false);
 
                 entity.Property(e => e.PfNo)
@@ -249,7 +247,7 @@ namespace AquaERP.Model.Models
                     .IsUnicode(false);
 
                 entity.Property(e => e.PresentAddress)
-                    .HasMaxLength(300)
+                    .HasMaxLength(2000)
                     .IsUnicode(false);
 
                 entity.Property(e => e.RejoinDate).HasColumnType("date");
@@ -258,15 +256,7 @@ namespace AquaERP.Model.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.SubDeptId)
-                    .HasMaxLength(15)
-                    .IsUnicode(false);
-
                 entity.Property(e => e.TotalExperience).HasColumnType("decimal(4, 2)");
-
-                entity.Property(e => e.TotalSalary).HasColumnType("decimal(10, 2)");
-
-                entity.Property(e => e.TwelveHrs).HasColumnName("Twelve_Hrs");
 
                 entity.Property(e => e.Uanno)
                     .HasMaxLength(30)
@@ -302,12 +292,7 @@ namespace AquaERP.Model.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Nominee)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Occupation)
+                entity.Property(e => e.Ocupation)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
@@ -315,8 +300,7 @@ namespace AquaERP.Model.Models
                 entity.Property(e => e.RelationShip)
                     .IsRequired()
                     .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasColumnName("Relation_Ship");
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Type)
                     .IsRequired()

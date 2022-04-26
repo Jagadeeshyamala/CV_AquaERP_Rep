@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8NORvSCLFhroSKjth0N6SBd7qC/NPdOeyK5LijTeyzYc5pW37dGKYQsb6ygJSDyLUSOGUEnzcR8D3IZmIL/7Hw==",
+  "dgSpecHash": "UAuD83vTXF3myycQVWZbmCR3HEsoJENqw/ZQzZAbTbSmjxZplWI95VAiihysZb2DaE+uZqlEBOoeuyC2YyUwiA==",
   "success": true,
   "projectFilePath": "C:\\ConcoVision\\CV_AquaERP_Rep\\CV_AquaERP_repo\\AquaERP.API\\AquaERP.Model\\AquaERP.Model.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\New-PC\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.14\\microsoft.entityframeworkcore.design.5.0.14.nupkg.sha512",
     "C:\\Users\\New-PC\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.14\\microsoft.entityframeworkcore.relational.5.0.14.nupkg.sha512",
     "C:\\Users\\New-PC\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.14\\microsoft.entityframeworkcore.sqlserver.5.0.14.nupkg.sha512",
+    "C:\\Users\\New-PC\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.14\\microsoft.entityframeworkcore.tools.5.0.14.nupkg.sha512",
     "C:\\Users\\New-PC\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\New-PC\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
     "C:\\Users\\New-PC\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
