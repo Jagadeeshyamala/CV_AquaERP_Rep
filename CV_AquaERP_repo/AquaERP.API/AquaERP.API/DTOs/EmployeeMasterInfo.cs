@@ -33,28 +33,16 @@ namespace AquaERP.API.DTOs
         public string PassportNo { get; set; }
         public string PanCard { get; set; }
         public string BlodGroup { get; set; }
-        public string EmpImageUrl { get; set; }
+     
+        public byte[] Photo { get; set; }
         public string Uanno { get; set; }
         public bool? IsActive { get; set; }
         public string EmploymentUnder { get; set; }
         public string Division { get; set; }
         public long? ContractorId { get; set; }
-        public bool Messbill { get; set; }
         public bool? Onroll { get; set; }
         public string NameInTelugu { get; set; }
-        public DateTime? RejoinDate { get; set; }
         public bool? IsInhouse { get; set; }
-        public string ReligionCasteSubCaste { get; set; }
-        public string EductionalQualification { get; set; }
-        public double Height { get; set; }
-        public int Weight { get; set; }
-        public string HealthProblems { get; set; }
-        public string IdentityRemarks { get; set; }
-        public DateTime CreatedDate { get; set; }
-
-        public List<EmpRefrenceInfo> empRefrenceInfo { get; set; }
-        public List<EmpFamilyInfo> empFamilyInfos { get; set; }
-        public List<EmpExperienceInfo> empExperienceInfos { get; set; }
-        public List<EmpDocumentInfo> empDocumentInfos { get; set; }
+     
     }
 }

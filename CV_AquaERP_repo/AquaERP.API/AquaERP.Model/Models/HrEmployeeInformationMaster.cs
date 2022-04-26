@@ -33,17 +33,30 @@ namespace AquaERP.Model.Models
         public string PassportNo { get; set; }
         public string PanCard { get; set; }
         public string BlodGroup { get; set; }
-        public string EmpImageUrl { get; set; }
+        public int? CasualLeave { get; set; }
+        public int? EarnedLeave { get; set; }
+        public int? SickLeave { get; set; }
+        public decimal? BasicSalary { get; set; }
+        public decimal? Da { get; set; }
+        public decimal? Hra { get; set; }
+        public decimal? Conveyance { get; set; }
+        public decimal? Incentive { get; set; }
+        public decimal? MedicalAllowance { get; set; }
+        public decimal? OtherAllowances { get; set; }
+        public decimal? TotalSalary { get; set; }
+        public byte[] Photo { get; set; }
         public string Uanno { get; set; }
         public bool? IsActive { get; set; }
         public string EmploymentUnder { get; set; }
         public string Division { get; set; }
         public long? ContractorId { get; set; }
         public string ImageId { get; set; }
+        public bool? TwelveHrs { get; set; }
         public bool Messbill { get; set; }
         public bool? Onroll { get; set; }
         public string NameInTelugu { get; set; }
         public DateTime? RejoinDate { get; set; }
+        public string SubDeptId { get; set; }
         public bool? IsInhouse { get; set; }
         public bool IsLeft { get; set; }
         public DateTime? LeftDate { get; set; }

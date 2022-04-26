@@ -12,11 +12,11 @@ namespace AquaERP.Model.Models
         public string Name { get; set; }
         public string RelationShip { get; set; }
         public int Age { get; set; }
-        public string Ocupation { get; set; }
+        public string Occupation { get; set; }
         public string Address { get; set; }
         public bool IsLive { get; set; }
         public string Type { get; set; }
-        public bool Nominee { get; set; }
+        public string Nominee { get; set; }
         public DateTime CreatedDate { get; set; }
         public Guid CreatedBy { get; set; }
         public DateTime? LastUpdatedDate { get; set; }
