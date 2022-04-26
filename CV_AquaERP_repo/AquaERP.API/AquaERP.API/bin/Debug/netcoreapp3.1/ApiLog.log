@@ -1,4 +1,151 @@
+<<<<<<< HEAD
 2022-04-26 12:38:05,110  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Application started. Press Ctrl+C to shut down.
  2022-04-26 12:38:05,506  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Hosting environment: Development
  2022-04-26 12:38:05,523  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Content root path: C:\ConcoVision\CV_AquaERP_Rep\CV_AquaERP_repo\AquaERP.API\AquaERP.API
+=======
+2022-04-25 13:29:41,433  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2022-04-25 13:29:41,734  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Hosting environment: Development
+ 2022-04-25 13:29:41,737  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Content root path: C:\ConcoVision\CV_AquaERP_Rep\CV_AquaERP_repo\AquaERP.API\AquaERP.API
+ 2022-04-25 13:31:10,120 ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Log [0] - MESSAGE: An unhandled exception has occurred while executing the request.
+ System.InvalidOperationException: Unable to resolve service for type 'AquaERP.API.AquaERP.Services.AquaInterface.IHrDepartmentMasterBusiness' while attempting to activate 'AquaERP.API.Controllers.HrDepartmentMasterController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-04-25 13:31:17,345 ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Log [0] - MESSAGE: An unhandled exception has occurred while executing the request.
+ System.InvalidOperationException: Unable to resolve service for type 'AquaERP.API.AquaERP.Services.AquaInterface.IHrDepartmentMasterBusiness' while attempting to activate 'AquaERP.API.Controllers.HrDepartmentMasterController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-04-25 13:33:14,745 ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Log [0] - MESSAGE: An unhandled exception has occurred while executing the request.
+ System.InvalidOperationException: Unable to resolve service for type 'AquaERP.API.AquaERP.Services.AquaInterface.IHrDepartmentMasterBusiness' while attempting to activate 'AquaERP.API.Controllers.HrDepartmentMasterController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-04-25 13:33:15,823 ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Log [0] - MESSAGE: An unhandled exception has occurred while executing the request.
+ System.InvalidOperationException: Unable to resolve service for type 'AquaERP.API.AquaERP.Services.AquaInterface.IHrDepartmentMasterBusiness' while attempting to activate 'AquaERP.API.Controllers.HrDepartmentMasterController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-04-25 13:33:16,649 ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Log [0] - MESSAGE: An unhandled exception has occurred while executing the request.
+ System.InvalidOperationException: Unable to resolve service for type 'AquaERP.API.AquaERP.Services.AquaInterface.IHrDepartmentMasterBusiness' while attempting to activate 'AquaERP.API.Controllers.HrDepartmentMasterController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-04-25 13:33:18,220 ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Log [0] - MESSAGE: An unhandled exception has occurred while executing the request.
+ System.InvalidOperationException: Unable to resolve service for type 'AquaERP.API.AquaERP.Services.AquaInterface.IHrDepartmentMasterBusiness' while attempting to activate 'AquaERP.API.Controllers.HrDepartmentMasterController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-04-25 13:33:18,951 ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Log [0] - MESSAGE: An unhandled exception has occurred while executing the request.
+ System.InvalidOperationException: Unable to resolve service for type 'AquaERP.API.AquaERP.Services.AquaInterface.IHrDepartmentMasterBusiness' while attempting to activate 'AquaERP.API.Controllers.HrDepartmentMasterController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-04-25 13:33:21,985 ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Log [0] - MESSAGE: An unhandled exception has occurred while executing the request.
+ System.InvalidOperationException: Unable to resolve service for type 'AquaERP.API.AquaERP.Services.AquaInterface.IHrDepartmentMasterBusiness' while attempting to activate 'AquaERP.API.Controllers.HrDepartmentMasterController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-04-25 13:33:48,196  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2022-04-25 13:33:48,263  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Hosting environment: Development
+ 2022-04-25 13:33:48,265  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Content root path: C:\ConcoVision\CV_AquaERP_Rep\CV_AquaERP_repo\AquaERP.API\AquaERP.API
+ 2022-04-25 13:40:57,657  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2022-04-25 13:40:57,717  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Hosting environment: Development
+ 2022-04-25 13:40:57,719  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Content root path: C:\ConcoVision\CV_AquaERP_Rep\CV_AquaERP_repo\AquaERP.API\AquaERP.API
+ 2022-04-25 13:41:10,805 ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Log [0] - MESSAGE: An unhandled exception has occurred while executing the request.
+ System.InvalidOperationException: Unable to resolve service for type 'AquaERP.API.AquaERP.Services.AquaInterface.IHrDepartmentMasterBusiness' while attempting to activate 'AquaERP.API.Controllers.HrDepartmentMasterController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-04-25 13:44:17,996  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2022-04-25 13:44:18,062  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Hosting environment: Development
+ 2022-04-25 13:44:18,064  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Content root path: C:\ConcoVision\CV_AquaERP_Rep\CV_AquaERP_repo\AquaERP.API\AquaERP.API
+ 2022-04-26 19:56:09,477  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2022-04-26 19:56:09,805  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Hosting environment: Development
+ 2022-04-26 19:56:09,810  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Content root path: C:\Users\jagad\Documents\GitHub\CV_AquaERP_repo\CV_AquaERP_repo\AquaERP.API\AquaERP.API
+ 2022-04-26 19:57:20,172  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2022-04-26 19:57:20,238  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Hosting environment: Development
+ 2022-04-26 19:57:20,240  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Content root path: C:\Users\jagad\Documents\GitHub\CV_AquaERP_repo\CV_AquaERP_repo\AquaERP.API\AquaERP.API
+>>>>>>> 5edf90f123c9b646396251fd376fbc5450ebec3c
  

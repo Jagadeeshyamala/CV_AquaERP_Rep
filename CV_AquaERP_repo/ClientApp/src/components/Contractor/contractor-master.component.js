@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import { GetHrDepartmentMaster, DeleteHrDepartmentMaster, CreateHrDepartmentMaster, UpdateHrDepartmentMaster } from '../../actions/DepartmentMaster'
+import { GetHrContractorDetail, DeleteHrContractorDetail, CreateHrContractorDetail, UpdateHrContractorDetail } from '../../actions/ContractorMaster'
 import { Grid, GridColumn as Column } from "@progress/kendo-react-grid";
 import "@progress/kendo-theme-default/dist/all.css"
-import AddDepartment from './add-department-master.component';
+import AddContractor from './add-contractor-master.component';
 import { formatDate } from '@telerik/kendo-intl';
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 import { connect } from "react-redux";
-import './department.css';
+import '../department/department.css';
 
 const mapStateToProps = (state) => {
-    debugger;
     return {
         departmets: state.departmets
     };
@@ -28,17 +27,17 @@ class KendoGridDateCell extends React.Component {
 }
 const EditCommandCell = (props) => {
     return (
-        <td>
-            <button style={{ margin: 4 }} className="k-button k-button-md k-rounded-md k-button-solid btn-edit" onClick={() => props.enterEdit(props.dataItem)}>
-                <span className="k-icon k-i-edit"></span> 
+        <td style={{ textAlign: 'center' }}>
+            <button style={{ margin: 3 }} className="k-button k-button-md k-rounded-md k-button-solid btn-edit" onClick={() => props.enterEdit(props.dataItem)}>
+                <span className="k-icon k-i-edit"></span>
             </button>
-            <button style={{ margin: 4 }} className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-primary" onClick={() => props.enterDelete(props.dataItem)}>
+            <button style={{ margin: 3 }} className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-primary" onClick={() => props.enterDelete(props.dataItem)}>
                 <span className="k-icon k-i-delete"></span>
             </button>
         </td>
     );
 };
-class DepartmentMasterList extends React.Component {
+class ContractorMasterList extends React.Component {
     constructor(props) {
         super(props);
 
@@ -48,10 +47,13 @@ class DepartmentMasterList extends React.Component {
             action: "",
             editItem: {
                 Id: "",
-                DeptCode: "",
-                DeptDetails: "",
-                ParentId: "",
-                ParentName: ""
+                Name: "",
+                SeriesFrom: 0,
+                SeriesTo: 0,
+                Address: "",
+                Contact: "",
+                Doj: "",
+                IsCompany: false
             },
             depts: [],
 
@@ -75,7 +77,7 @@ class DepartmentMasterList extends React.Component {
     }
 
     bindData() {
-        this.props.GetHrDepartmentMaster();
+        this.props.GetHrContractorDetail();
     }
 
     handleCreate = () => {
@@ -110,7 +112,7 @@ class DepartmentMasterList extends React.Component {
                          
                             <button className='btn-yes'
                                 onClick={() => {
-                                    this.props.DeleteHrDepartmentMaster(item.id)
+                                    this.props.DeleteHrContractorDetail(item.id)
                                         .then(() => {
                                             this.setState({
                                                 updateStatus: true
@@ -132,10 +134,10 @@ class DepartmentMasterList extends React.Component {
         });
     };
     handleSubmit = (item) => {
-       
+        var existDeptCode=this.props.departmets.filter(a=>a.deptCode.toUpperCase()==item.deptCode.toUpperCase() && a.isDeleted ==false);
+        var existDeptDetails=this.props.departmets.filter(a=>a.deptDetails.toUpperCase()==item.deptDetails.toUpperCase() && a.isDeleted ==false);
+
              if (!item.id) {
-                var existDeptCode=this.props.departmets.filter(a=>a.deptCode.toUpperCase()==item.deptCode.toUpperCase() && a.isDeleted ==false);
-                var existDeptDetails=this.props.departmets.filter(a=>a.deptDetails.toUpperCase()==item.deptDetails.toUpperCase() && a.isDeleted ==false);
                 if(existDeptCode.length > 0)
                 {
                     confirmAlert({
@@ -185,7 +187,7 @@ class DepartmentMasterList extends React.Component {
                     DeptDetails: item.deptDetails,
                     ParentId: !!item.Parent ? item.Parent.parentId : null
                 }
-                this.props.CreateHrDepartmentMaster(input).then((data) => {
+                this.props.CreateHrContractorDetail(input).then((data) => {
                     confirmAlert({
                         customUI: ({ onClose }) => {
                             return (
@@ -211,51 +213,7 @@ class DepartmentMasterList extends React.Component {
                 }
             }
             else {
-                var existDeptCode=this.props.departmets.filter(a=>a.deptCode.toUpperCase()==item.deptCode.toUpperCase() && a.id !=item.id && a.isDeleted ==false);
-                var existDeptDetails=this.props.departmets.filter(a=>a.deptDetails.toUpperCase()==item.deptDetails.toUpperCase() && a.id !=item.id && a.isDeleted ==false);
-                if(existDeptCode.length > 0)
-                {
-                    confirmAlert({
-                        customUI: ({ onClose }) => {
-                            return (
-                                <div className='custom-ui'>
-                                    <div className='alert-action-body'>
-                                        <div>Department code has allready exist.Please try again.</div>
-                                    </div>
-                                    <div className='alert-footer'>
-                                        <button className='btn-cancel' onClick={onClose}>Ok</button>
-                                      </div>
-                                </div>
-                            );
-                        }
-                    });
-                    this.setState({
-                        setOpenForm: false,
-                        updateStatus: false
-                    });
-                }
-                else if(existDeptDetails.length > 0)
-                {
-                    confirmAlert({
-                        customUI: ({ onClose }) => {
-                            return (
-                                <div className='custom-ui'>
-                                    <div className='alert-action-body'>
-                                        <div>Department details has allready exist.Please try again.</div>
-                                    </div>
-                                    <div className='alert-footer'>
-                                        <button className='btn-cancel' onClick={onClose}>Ok</button>
-                                      </div>
-                                </div>
-                            );
-                        }
-                    });
-                    this.setState({
-                        setOpenForm: false,
-                        updateStatus: false
-                    });
-                }
-                else if(item.deptDetails.toUpperCase()==item.Parent.parentName.toUpperCase())
+                 if(item.deptDetails.toUpperCase()==item.Parent.parentName)
                 {
                     confirmAlert({
                         customUI: ({ onClose }) => {
@@ -284,7 +242,7 @@ class DepartmentMasterList extends React.Component {
                         DeptDetails: item.deptDetails,
                         ParentId: !!item.Parent ? item.Parent.parentId : null
                     }
-                    this.props.UpdateHrDepartmentMaster(item.id, input).then((data) => {
+                    this.props.UpdateHrContractorDetail(item.id, input).then((data) => {
                         confirmAlert({
                             customUI: ({ onClose }) => {
                                 return (
@@ -319,24 +277,23 @@ class DepartmentMasterList extends React.Component {
     )
 
     render() {
-        debugger;
         const { departmets } = this.props;
         let deptData = !!departmets && departmets.map(d => ({
             id: d.id,
-            deptCode: d.deptCode,
-            deptDetails: d.deptDetails,
-            createdDate: d.createdDate,
-            Parent: {
-                parentId: d.id,
-                parentName: d.parentName
-            }
+            name: d.name,
+            seriesFrom: d.seriesFrom,
+            seriesTo: d.seriesTo,
+            address: d.address,
+            contact: d.contact,
+            doj: d.doj,
+            isCompany: d.isCompany
         }));
         return <React.Fragment>
             <div id="adddepartment" className="profile-page main-content">
                 <div className="card-container">
                     <div className="card-component">
-                        <button style={{ marginBottom: 7, left: '89%' }} className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-info" onClick={this.handleCreate}>
-                            <span className="k-icon k-i-plus"></span> Create Department
+                        <button style={{ marginBottom: 15, left: '87%' }} className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-info" onClick={this.handleCreate}>
+                            <span className="k-icon k-i-plus"></span> Create Contractor
                         </button>
 
                         <Grid style={{
@@ -347,17 +304,20 @@ class DepartmentMasterList extends React.Component {
 
                                 <Column field="id" title="ID" filterable={false} />
                             </div>
-                            <Column field="deptCode" title="Dept Code"/>
-                            <Column field="deptDetails" title="Dept Details" width="350px" />
-                            <Column field="Parent.parentName" title="Parent Name" width="250px" />
-                            <Column field="createdDate"
-                                title="Created Date"
+                            <Column field="name" title="Name" />
+                            <Column field="seriesFrom" title="SeriesFrom" />
+                            <Column field="seriesTo" title="SeriesTo" />
+                            <Column field="address" title="Address" />
+                            <Column field="contact" title="Contact" />
+                            <Column field="doj"
+                                title="Doj"
                                 width="250px" filter="date"
                                 cell={KendoGridDateCell} />
+                                <Column field="isCompany" title="IsCompany" />
                             <Column cell={this.MyEditCommandCell} />
                         </Grid>
                         {this.state.setOpenForm && (
-                            <AddDepartment
+                            <AddContractor
                                 cancelEdit={this.handleCancelEdit}
                                 onSubmit={this.handleSubmit}
                                 item={this.state.editItem}
@@ -372,7 +332,4 @@ class DepartmentMasterList extends React.Component {
     };
 }
 
-export default connect(mapStateToProps, { GetHrDepartmentMaster, DeleteHrDepartmentMaster, CreateHrDepartmentMaster, UpdateHrDepartmentMaster })(DepartmentMasterList)
-
-
-
+export default connect(mapStateToProps, { GetHrContractorDetail, DeleteHrContractorDetail, CreateHrContractorDetail, UpdateHrContractorDetail })(ContractorMasterList)

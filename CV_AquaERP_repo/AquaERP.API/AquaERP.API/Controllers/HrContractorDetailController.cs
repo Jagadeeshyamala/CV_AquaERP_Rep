@@ -7,7 +7,7 @@ using System.Linq;
 using AquaERP.API.AquaERP.Services.AquaInterface;
 using AquaERP.API.AquaERP.Services.AquaBusiness;
 using System.Net.Http;
-
+using AquaERP.API.DTOs;
 
 namespace AquaERP.API.Controllers
 {
@@ -15,22 +15,16 @@ namespace AquaERP.API.Controllers
     [ApiController]
     public class HrContractorDetailController : ControllerBase
     {
-        IHrContractorDetailBusiness _objContractorDetail;
-
-        public HrContractorDetailController(IHrContractorDetailBusiness objContractorDetail)
-        {
-            _objContractorDetail = objContractorDetail;
-        }
-
+        IHrContractorDetailBusiness objContractorDetail = new HrContractorDetailBusiness();
         [HttpGet]
-        [Route("GetHrContractorDetails")]
-        public IEnumerable<HrContractorDetail> GetHrContractorDetails()
+        [Route("GetHrContractorDetail")]
+        public IEnumerable<ContractorDetailView> GetHrContractorDetails()
         {
-            IEnumerable<HrContractorDetail> lstContractorDetails = new List<HrContractorDetail>();
+            IEnumerable<ContractorDetailView> lstHrContractorDetail = new List<ContractorDetailView>();
 
             try
             {
-                lstContractorDetails = _objContractorDetail.GetHrContractorDetail();
+                lstHrContractorDetail = objContractorDetail.GetHrContractorDetail();
             }
             catch (System.ApplicationException)
             {
@@ -42,16 +36,57 @@ namespace AquaERP.API.Controllers
 
                 throw;
             }
-            return lstContractorDetails;
+            return lstHrContractorDetail;
         }
-        [HttpGet]
-        [Route("HrContractorDetailsInsert")]
-        public HrContractorDetail HrContractorDetailsInsert(HrContractorDetail input)
+
+        [HttpPost]
+        [Route("InsertContractorDetail")]
+        public void InsertHrContractorDetail(ContractorDetail data)
         {
             try
             {
-                var dd = _objContractorDetail.HrContractorDetailInsert(input);
-                return dd;
+                objContractorDetail.InsertHrContractorDetail(data);
+            }
+            catch (System.ApplicationException)
+            {
+
+                throw;
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+
+        }
+        [HttpPut]
+        [Route("UpdateHrContractorDetail/{id}")]
+        public void UpdateHrContractorDetail(System.Guid id, ContractorDetail data)
+        {
+            try
+            {
+                objContractorDetail.UpdateHrContractorDetail(id, data);
+            }
+            catch (System.ApplicationException)
+            {
+
+                throw;
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        [HttpDelete]
+        [Route("DeleteHrContractorDetail/{id}")]
+        public void DeleteHrContractorDetails(System.Guid id)
+        {
+            try
+            {
+                objContractorDetail.DeleteHrContractorDetail(id);
             }
             catch (System.ApplicationException)
             {

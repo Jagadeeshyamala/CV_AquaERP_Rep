@@ -8,8 +8,10 @@ import Info from './pages/Info.jsx';
 import SARoles from './pages/SARoles.js';
 import AddRole from './pages/addrole.js';
 import HrDepartment from './pages/departmentList';
+import HrDesignation from './pages/designationlist';
 import AddDepartment from './components/department/add-department-master.component';
 import DepartmentMasterList from './components/department/department-master.component';
+import DesignationMasterList from './components/designation/designation-master.component';
 import EmployeeMaster from './components/employee/employee-master.component';
 import AddEmployeeMaster from './components/employee/add-employee-master.component';
 import DrawerRouterContainer from './components/DrawerRouterContainer.jsx';
@@ -44,6 +46,7 @@ import { esMessages } from './messages/es';
 
 //import "~@progress/kendo-theme-bootstrap/dist/all.css";
 import './App.scss';
+import Designation from './pages/designationlist.js';
 
 load(
     likelySubtags,
