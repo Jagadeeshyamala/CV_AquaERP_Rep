@@ -8,12 +8,10 @@ namespace AquaERP.Model.Models
     public partial class HrEmployeeInformationMaster
     {
         public Guid Id { get; set; }
-        public string PersonId { get; set; }
         public string BiometricId { get; set; }
         public string InternalId { get; set; }
-        public DateTime? Doc { get; set; }
         public string Name { get; set; }
-        public string FatherHusband { get; set; }
+        public string FatherOrhusband { get; set; }
         public DateTime? Dob { get; set; }
         public string PresentAddress { get; set; }
         public string PermanentAddress { get; set; }
@@ -32,8 +30,8 @@ namespace AquaERP.Model.Models
         public string PfNo { get; set; }
         public string EsiNo { get; set; }
         public string AadharNo { get; set; }
-        public string PassPortNo { get; set; }
-        public string Pancard { get; set; }
+        public string PassportNo { get; set; }
+        public string PanCard { get; set; }
         public string BlodGroup { get; set; }
         public int? CasualLeave { get; set; }
         public int? EarnedLeave { get; set; }
@@ -47,7 +45,7 @@ namespace AquaERP.Model.Models
         public decimal? OtherAllowances { get; set; }
         public decimal? TotalSalary { get; set; }
         public byte[] Photo { get; set; }
-        public string UanNo { get; set; }
+        public string Uanno { get; set; }
         public bool? IsActive { get; set; }
         public string EmploymentUnder { get; set; }
         public string Division { get; set; }
@@ -58,8 +56,6 @@ namespace AquaERP.Model.Models
         public bool? Onroll { get; set; }
         public string NameInTelugu { get; set; }
         public DateTime? RejoinDate { get; set; }
-        public byte[] Document { get; set; }
-        public string Extension { get; set; }
         public string SubDeptId { get; set; }
         public bool? IsInhouse { get; set; }
         public bool IsLeft { get; set; }

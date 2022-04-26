@@ -1,0 +1,34 @@
+[
+    {
+      "BloodGroupID": "O+",
+      "BloodGroupName": "O+"
+    },
+    {
+        "BloodGroupID": "O-",
+        "BloodGroupName": "O-"
+    },
+    {
+        "BloodGroupID": "A+",
+        "BloodGroupName": "A+"
+    },
+    {
+        "BloodGroupID": "A-",
+        "BloodGroupName": "A-"
+    },
+    {
+        "BloodGroupID": "B+",
+        "BloodGroupName": "B+"
+    },
+    {
+        "BloodGroupID": "B-",
+        "BloodGroupName": "B-"
+    },
+    {
+        "BloodGroupID": "AB+",
+        "BloodGroupName": "AB+"
+    },
+    {
+        "BloodGroupID": "AB-",
+        "BloodGroupName": "AB-"
+    }
+]

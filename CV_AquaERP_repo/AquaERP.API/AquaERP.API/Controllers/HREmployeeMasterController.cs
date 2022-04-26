@@ -14,7 +14,12 @@ namespace AquaERP.API.Controllers
     [ApiController]
     public class HREmployeeMasterController : ControllerBase
     {
-        IHrEmployeeMasterBusiness objEmployeeMaster = new HrEmployeeMasterBusiness();
+        IHrEmployeeMasterBusiness _objEmployeeMaster;
+
+        public HREmployeeMasterController(IHrEmployeeMasterBusiness objEmployeeMaster)
+        {
+            _objEmployeeMaster = objEmployeeMaster;
+        }
 
         [HttpGet]
         [Route("GetHrDesignationMaster")]
@@ -24,7 +29,7 @@ namespace AquaERP.API.Controllers
 
             try
             {
-                lstHrDesignationMaster = objEmployeeMaster.GetHrDesignationMaster();
+                lstHrDesignationMaster = _objEmployeeMaster.GetHrDesignationMaster();
             }
             catch (System.ApplicationException)
             {
@@ -39,5 +44,34 @@ namespace AquaERP.API.Controllers
             return lstHrDesignationMaster;
         }
 
+        [HttpGet]
+        [Route("GetHrContractorDetails")]
+        public IEnumerable<ContractorDetailView> GetHrContractorDetails()
+        {
+            IEnumerable<ContractorDetailView> lstHrContractorDetailView = new List<ContractorDetailView>();
+
+            try
+            {
+                lstHrContractorDetailView = _objEmployeeMaster.GetHrContractorDetail();
+            }
+            catch (System.ApplicationException)
+            {
+
+                throw;
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+            return lstHrContractorDetailView;
+        }
+
+        [HttpGet]
+        [Route("InsertEmployeeInfo")]
+        public void InsertEmployeeInfo(EmployeeMasterInfo employeeMasterInfo)
+        {
+
+        }
     }
 }

@@ -10,6 +10,7 @@ export const GetHrDepartmentMaster = () => async (dispatch) => {
 
     dispatch({
       type: GET_DATA,
+      methodType:"DEPARTMENT",
       payload: response.data
     });
   }
@@ -25,7 +26,6 @@ export const CreateHrDepartmentMaster = (data) => async (dispatch) => {
       type: CREATE_DATA,
       payload: response.data,
     });
-    //return Promise.resolve(response.data);
   } catch (err) {
     return Promise.reject(err);
   }

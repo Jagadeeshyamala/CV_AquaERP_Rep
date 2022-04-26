@@ -29,7 +29,6 @@ C:\ConcoVision\CV_AquaERP_Rep\CV_AquaERP_repo\AquaERP.API\AquaERP.Model\bin\Debu
 C:\ConcoVision\CV_AquaERP_Rep\CV_AquaERP_repo\AquaERP.API\AquaERP.Model\bin\Debug\netcoreapp3.1\AquaERP.Model.runtimeconfig.dev.json
 C:\ConcoVision\CV_AquaERP_Rep\CV_AquaERP_repo\AquaERP.API\AquaERP.Model\bin\Debug\netcoreapp3.1\AquaERP.Model.dll
 C:\ConcoVision\CV_AquaERP_Rep\CV_AquaERP_repo\AquaERP.API\AquaERP.Model\bin\Debug\netcoreapp3.1\AquaERP.Model.pdb
-C:\ConcoVision\CV_AquaERP_Rep\CV_AquaERP_repo\AquaERP.API\AquaERP.Model\obj\Debug\netcoreapp3.1\AquaERP.Model.csproj.AssemblyReference.cache
 C:\ConcoVision\CV_AquaERP_Rep\CV_AquaERP_repo\AquaERP.API\AquaERP.Model\obj\Debug\netcoreapp3.1\AquaERP.Model.GeneratedMSBuildEditorConfig.editorconfig
 C:\ConcoVision\CV_AquaERP_Rep\CV_AquaERP_repo\AquaERP.API\AquaERP.Model\obj\Debug\netcoreapp3.1\AquaERP.Model.AssemblyInfoInputs.cache
 C:\ConcoVision\CV_AquaERP_Rep\CV_AquaERP_repo\AquaERP.API\AquaERP.Model\obj\Debug\netcoreapp3.1\AquaERP.Model.AssemblyInfo.cs

@@ -11,6 +11,20 @@ namespace AquaERP.API.AquaERP.Services.AquaBusiness
     public class HrEmployeeMasterBusiness : IHrEmployeeMasterBusiness
     {
         private readonly UnitOfWork unitOfWork = new UnitOfWork();
+
+        public IEnumerable<ContractorDetailView> GetHrContractorDetail()
+        {
+            List<ContractorDetailView> contractorDetailView = new List<ContractorDetailView>();
+
+            contractorDetailView = unitOfWork.HrContractorDetailRepository.GetAll().Where(a => a.IsDeleted == false).Select(a => new ContractorDetailView
+            {
+                ContractorID = a.Id,
+                ContractorName = a.Name
+            }).ToList();
+
+            return contractorDetailView;
+        }
+
         public IEnumerable<DesignationMasterView> GetHrDesignationMaster()
         {
             List<DesignationMasterView> designationMasterViews = new List<DesignationMasterView>();

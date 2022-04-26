@@ -9,5 +9,6 @@ namespace AquaERP.API.AquaERP.Services.AquaInterface
    public interface IHrEmployeeMasterBusiness
     {
         IEnumerable<DesignationMasterView> GetHrDesignationMaster();
+        IEnumerable<ContractorDetailView> GetHrContractorDetail();
     }
 }

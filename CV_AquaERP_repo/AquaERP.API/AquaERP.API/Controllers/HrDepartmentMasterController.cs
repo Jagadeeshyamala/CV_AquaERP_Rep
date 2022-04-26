@@ -13,7 +13,12 @@ namespace AquaERP.API.Controllers
     public class HrDepartmentMasterController : ControllerBase
     {
 
-        IHrDepartmentMasterBusiness objDepartmentMaster = new HrDepartmentMasterBusiness();
+        IHrDepartmentMasterBusiness _objDepartmentMaster;
+
+        public HrDepartmentMasterController(IHrDepartmentMasterBusiness objDepartmentMaster)
+        {
+            _objDepartmentMaster = objDepartmentMaster;
+        }
 
         [HttpGet]
         [Route("GetHrDepartmentMaster")]
@@ -23,7 +28,7 @@ namespace AquaERP.API.Controllers
 
             try
             {
-                lstHrDepartmentMaster = objDepartmentMaster.GetHrDepartmentMaster();
+                lstHrDepartmentMaster = _objDepartmentMaster.GetHrDepartmentMaster();
             }
             catch (System.ApplicationException)
             {
@@ -40,11 +45,11 @@ namespace AquaERP.API.Controllers
 
         [HttpPost]
         [Route("InsertHrDepartmentMaster")]
-        public void InsertHrDepartmentMaster(DepartmentMaster data)
+        public DepartmentMaster InsertHrDepartmentMaster(DepartmentMaster data)
         {
             try
             {
-                objDepartmentMaster.InsertHrDepartmentMaster(data);
+                _objDepartmentMaster.InsertHrDepartmentMaster(data);
             }
             catch (System.ApplicationException)
             {
@@ -57,6 +62,8 @@ namespace AquaERP.API.Controllers
                 throw;
             }
 
+            return data;
+
         }
         [HttpPut]
         [Route("UpdateHrDepartmentMaster/{id}")]
@@ -64,7 +71,7 @@ namespace AquaERP.API.Controllers
         {
             try
             {
-                objDepartmentMaster.UpdateHrDepartmentMaster(id, data);
+                _objDepartmentMaster.UpdateHrDepartmentMaster(id, data);
             }
             catch (System.ApplicationException)
             {
@@ -85,7 +92,7 @@ namespace AquaERP.API.Controllers
         {
             try
             {
-                objDepartmentMaster.DeleteHrDepartmentMaster(id);
+                _objDepartmentMaster.DeleteHrDepartmentMaster(id);
             }
             catch (System.ApplicationException)
             {

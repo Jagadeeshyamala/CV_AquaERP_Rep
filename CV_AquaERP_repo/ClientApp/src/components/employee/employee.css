@@ -75,8 +75,8 @@ my-app { padding: 0 !important; }
 .inner-content {
     padding-top: 15px;
      background-color:  #e4e8ef;
-     padding-right: 100px;
-     padding-left: 100px;
+     padding-right: 50px;
+     padding-left: 50px;
      box-shadow: 0px 10px 20px #00000068;
 }
 .emp-footer {
@@ -125,4 +125,47 @@ input{
 
 .img-preview{
     padding-top: 20px;
+}
+
+.is-inhous{
+    text-align: left;
+}
+
+.is-inhous > span > label{
+    padding-left: 10px;
+}
+.k-tabstrip-content, .k-tabstrip > .k-content
+{
+    padding: 0px !important;
+}
+
+.k-justify-content-start {
+    margin-top: -25px !important;
+}
+
+.choose_file {
+    position: relative;
+   
+    font: normal 14px Myriad Pro, Verdana, Geneva, sans-serif;
+    color: #7f7f7f;
+    margin-top: 2px;
+    background: none;
+    float: right;
+}
+.choose_file input[type="file"]{
+    -webkit-appearance:none; 
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:0;
+    width: 100%;
+    height: 100%;
+}
+
+.choose_file > button {
+    width: 30%;
+    height: 28px;
+    border-radius: 10px;
+    background-color: steelblue;
+    color: white;
 }
