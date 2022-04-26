@@ -47,6 +47,9 @@ class AddEmployeeMaster extends React.Component {
 
   render() {
     return (
+      <div id="adddepartment" className="profile-page main-content">
+                <div className="card-container">
+                    <div className="card-component">
       <TabStrip selected={this.state.selected} onSelect={this.handleSelect}>
         <TabStripTab title="Basic" >
           <div>
@@ -79,6 +82,9 @@ class AddEmployeeMaster extends React.Component {
           </div>
         </TabStripTab>
       </TabStrip>
+      </div>
+      </div>
+      </div>
     );
   }
 }
