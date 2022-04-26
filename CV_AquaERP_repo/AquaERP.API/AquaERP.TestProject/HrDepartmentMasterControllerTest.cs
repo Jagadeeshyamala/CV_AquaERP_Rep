@@ -40,7 +40,6 @@ namespace AquaERP.TestProject
         [Fact]
         public void AddDepartmentTest()
         {
-            //OK RESULT TEST START
 
             //Arrange
             DepartmentMaster addDepartment = new DepartmentMaster()
