@@ -275,3 +275,8 @@ C:\Users\jagad\Documents\GitHub\CV_AquaERP_repo\CV_AquaERP_repo\AquaERP.API\Aqua
 C:\Users\jagad\Documents\GitHub\CV_AquaERP_repo\CV_AquaERP_repo\AquaERP.API\AquaERP.API\obj\Debug\netcoreapp3.1\AquaERP.API.dll
 C:\Users\jagad\Documents\GitHub\CV_AquaERP_repo\CV_AquaERP_repo\AquaERP.API\AquaERP.API\obj\Debug\netcoreapp3.1\AquaERP.API.pdb
 C:\Users\jagad\Documents\GitHub\CV_AquaERP_repo\CV_AquaERP_repo\AquaERP.API\AquaERP.API\obj\Debug\netcoreapp3.1\AquaERP.API.genruntimeconfig.cache
+C:\Users\jagad\Documents\GitHub\CV_AquaERP_repo\CV_AquaERP_repo\AquaERP.API\AquaERP.API\bin\Debug\netcoreapp3.1\log4net.config
+C:\Users\jagad\Documents\GitHub\CV_AquaERP_repo\CV_AquaERP_repo\AquaERP.API\AquaERP.API\bin\Debug\netcoreapp3.1\log4net.dll
+C:\Users\jagad\Documents\GitHub\CV_AquaERP_repo\CV_AquaERP_repo\AquaERP.API\AquaERP.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\jagad\Documents\GitHub\CV_AquaERP_repo\CV_AquaERP_repo\AquaERP.API\AquaERP.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\jagad\Documents\GitHub\CV_AquaERP_repo\CV_AquaERP_repo\AquaERP.API\AquaERP.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Log4Net.AspNetCore.dll

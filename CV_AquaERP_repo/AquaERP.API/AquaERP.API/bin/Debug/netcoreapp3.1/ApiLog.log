@@ -136,4 +136,10 @@
 2022-04-25 13:44:17,996  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Application started. Press Ctrl+C to shut down.
  2022-04-25 13:44:18,062  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Hosting environment: Development
  2022-04-25 13:44:18,064  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Content root path: C:\ConcoVision\CV_AquaERP_Rep\CV_AquaERP_repo\AquaERP.API\AquaERP.API
+ 2022-04-26 19:56:09,477  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2022-04-26 19:56:09,805  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Hosting environment: Development
+ 2022-04-26 19:56:09,810  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Content root path: C:\Users\jagad\Documents\GitHub\CV_AquaERP_repo\CV_AquaERP_repo\AquaERP.API\AquaERP.API
+ 2022-04-26 19:57:20,172  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2022-04-26 19:57:20,238  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Hosting environment: Development
+ 2022-04-26 19:57:20,240  INFO Microsoft.Hosting.Lifetime.Log [0] - MESSAGE: Content root path: C:\Users\jagad\Documents\GitHub\CV_AquaERP_repo\CV_AquaERP_repo\AquaERP.API\AquaERP.API
  

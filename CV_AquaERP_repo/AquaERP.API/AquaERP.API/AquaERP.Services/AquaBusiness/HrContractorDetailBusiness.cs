@@ -30,16 +30,16 @@ namespace AquaERP.API.AquaERP.Services.AquaBusiness
 
             foreach (var item in contractorDetail)
             {
-                ContractorDetailView contractorDetailView = new ContractorDetailView();
-                contractorDetailView.Id = item.Id;
-                contractorDetailView.Name = item.Name;
-                contractorDetailView.SeriesFrom = item.SeriesFrom;
-                contractorDetailView.SeriesTo = item.SeriesTo;
-                contractorDetailView.Address = item.Address;
-                contractorDetailView.Contact = item.Contact;
-                contractorDetailView.Doj = item.Doj;
-                contractorDetailView.IsCompany = item.IsCompany;
-                contractorDetailViews.Add(contractorDetailView);
+                //ContractorDetailView contractorDetailView = new ContractorDetailView();
+                //contractorDetailView.Id = item.Id;
+                //contractorDetailView.Name = item.Name;
+                //contractorDetailView.SeriesFrom = item.SeriesFrom;
+                //contractorDetailView.SeriesTo = item.SeriesTo;
+                //contractorDetailView.Address = item.Address;
+                //contractorDetailView.Contact = item.Contact;
+                //contractorDetailView.Doj = item.Doj;
+                //contractorDetailView.IsCompany = item.IsCompany;
+                //contractorDetailViews.Add(contractorDetailView);
             }
 
             return contractorDetailViews;
